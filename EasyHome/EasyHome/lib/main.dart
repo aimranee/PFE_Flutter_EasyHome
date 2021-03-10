@@ -1,4 +1,3 @@
-import 'package:EasyHome/app/main_screen.dart';
 import 'package:EasyHome/app/sing_in/landing_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
