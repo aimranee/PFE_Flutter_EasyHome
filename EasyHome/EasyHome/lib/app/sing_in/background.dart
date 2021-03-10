@@ -15,9 +15,9 @@ class Background extends StatelessWidget {
         children: [
           Positioned(
             top: 50,
-            left: 30,
+            right: 30,
             child: Image.asset("assets/images/EASYHOME.png",
-                width: size.width * 0.25),
+                width: size.width * 0.20),
           ),
           Positioned(
             top: 0,
