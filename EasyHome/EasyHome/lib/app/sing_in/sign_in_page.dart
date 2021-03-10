@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:EasyHome/app/sing_in/background.dart';
 import 'package:EasyHome/app/sing_in/sign_in_button.dart';
 import 'package:EasyHome/app/sing_in/social_sign_in_button.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key key, @required this.onSignIn}) : super(key: key);
@@ -12,6 +13,36 @@ class SignInPage extends StatelessWidget {
     try {
       final UserCredential = await FirebaseAuth.instance.signInAnonymously();
       onSignIn(UserCredential.user);
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  Future<User> _signInWithGoogle() async {
+    try {
+      final googleSignIn = GoogleSignIn();
+      final googleUser = await googleSignIn.signIn();
+      if (googleUser != null) {
+        final googleAuth = await googleUser.authentication;
+        if (googleAuth.idToken != null) {
+          final userCredential = await FirebaseAuth.instance
+              .signInWithCredential(GoogleAuthProvider.credential(
+            idToken: googleAuth.idToken,
+            accessToken: googleAuth.accessToken,
+          ));
+          onSignIn(userCredential.user);
+        } else {
+          throw FirebaseAuthException(
+            code: 'ERROR_MESSING_GOOGLE_ID_TOKEN',
+            message: 'Missing Google ID Token',
+          );
+        }
+      } else {
+        throw FirebaseAuthException(
+          code: 'ERROR_ABORTED_BY_USER',
+          message: 'Sign in aborted by user',
+        );
+      }
     } catch (e) {
       print(e.toString());
     }
@@ -56,7 +87,7 @@ class SignInPage extends StatelessWidget {
               text: 'Sing in with Google',
               textColor: Colors.black87,
               color: Colors.white,
-              onPressed: () {},
+              onPressed: _signInWithGoogle,
             ),
           ),
           SizedBox(
