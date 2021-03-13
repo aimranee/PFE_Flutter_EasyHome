@@ -25,8 +25,10 @@ class CustomRaisedButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
             Radius.circular(borderRadius),
-          )),
-          onPressed: onPressed,
-        ));
+          )
+        ),
+        onPressed: onPressed,
+      )
+    );
   }
 }

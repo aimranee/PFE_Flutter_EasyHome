@@ -30,7 +30,7 @@ class _LandingPageState extends State<LandingPage> {
         onSignIn: _updateUser,
       );
     else
-      return TestPage(
+      return HomePage(
         onSignOut: () => _updateUser(null),
       );
   }
