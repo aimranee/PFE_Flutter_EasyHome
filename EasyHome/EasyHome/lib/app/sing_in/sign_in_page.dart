@@ -10,15 +10,6 @@ class SignInPage extends StatelessWidget {
   const SignInPage({Key key, @required this.onSignIn}) : super(key: key);
   final void Function(User) onSignIn;
 
-  Future<void> _signInAnonymously() async {
-    try {
-      final userCredential = await FirebaseAuth.instance.signInAnonymously();
-      onSignIn(userCredential.user);
-    } catch (e) {
-      print(e.toString());
-    }
-  }
-
   Future<User> _signInWithGoogle() async {
     try {
       final googleSignIn = GoogleSignIn();
@@ -101,7 +92,7 @@ class SignInPage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
-              'Here you can find youd home',
+              'Here you can find your home',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
             ),
@@ -135,25 +126,6 @@ class SignInPage extends StatelessWidget {
           SizedBox(
             height: 8.0,
           ),
-          Container(
-            child: Text(
-              'OR',
-              style: TextStyle(fontSize: 14.0, color: Colors.black87),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          SizedBox(
-            height: 8.0,
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: SingInButton(
-              text: 'Go anonymous',
-              textColor: Colors.black,
-              color: Colors.lime[200],
-              onPressed: _signInAnonymously,
-            ),
-          )
         ],
       ),
     );

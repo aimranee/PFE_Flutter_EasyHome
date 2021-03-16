@@ -1,4 +1,4 @@
-import 'package:EasyHome/app/home/test.dart';
+import 'package:EasyHome/app/screen/home/test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:EasyHome/app/sing_in/sign_in_page.dart';

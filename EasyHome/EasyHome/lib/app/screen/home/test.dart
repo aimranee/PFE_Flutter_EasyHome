@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
       title: Text('EasyHome'),
       actions: [
-        FlatButton(
+        TextButton(
           child: Text(
             'Logout',
             style: TextStyle(
@@ -37,6 +37,7 @@ class HomePage extends StatelessWidget {
           onPressed: _signOut,
         )
       ],
-    ));
+    ),
+    );
   }
 }
