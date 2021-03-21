@@ -1,6 +1,6 @@
-import 'package:EasyHome/app/screen/annonce_parametre/annonce.dart';
+import 'package:EasyHome/app/screen/annonce_parametre/annoncePremiem.dart';
 
-final _annonce1 = Annonce(
+final _annonce1 = AnnoncePremiem(
   images: 'assets/images/house3.jpeg',
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 2éme etage o mchemcha 3 chambre ...',
@@ -9,7 +9,7 @@ final _annonce1 = Annonce(
   limitPersonne: 3,
   sqFeet: 200,
   isFav: false,
-  ListImages: [
+  ListPremiem: [
     'assets/images/house1.jpeg',
     'assets/images/indoor1.jpeg',
     'assets/images/indoor2.jpeg',
@@ -19,7 +19,7 @@ final _annonce1 = Annonce(
   ],
 );
 
-final _annonce2 = Annonce(
+final _annonce2 = AnnoncePremiem(
   images: 'assets/images/house3.jpeg',
   address: 'Elghawa, Saad Allah Hined',
   description:
@@ -29,7 +29,7 @@ final _annonce2 = Annonce(
   limitPersonne: 3,
   sqFeet: 200,
   isFav: false,
-  ListImages: [
+  ListPremiem: [
     'assets/images/house2.jpeg',
     'assets/images/indoor1.jpeg',
     'assets/images/indoor2.jpeg',
@@ -39,7 +39,7 @@ final _annonce2 = Annonce(
   ],
 );
 
-final _annonce3 = Annonce(
+final _annonce3 = AnnoncePremiem(
   images: 'assets/images/house5.jpeg',
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 3éme etage o mchemcha 2 chambre ...',
@@ -48,7 +48,7 @@ final _annonce3 = Annonce(
   limitPersonne: 3,
   sqFeet: 200,
   isFav: false,
-  ListImages: [
+  ListPremiem: [
     'assets/images/house1.jpeg',
     'assets/images/indoor1.jpeg',
     'assets/images/indoor2.jpeg',
@@ -58,7 +58,7 @@ final _annonce3 = Annonce(
   ],
 );
 
-final _annonce4 = Annonce(
+final _annonce4 = AnnoncePremiem(
   images: 'assets/images/house1.jpeg',
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 3éme etage o mchemcha 2 chambre ...',
@@ -67,7 +67,7 @@ final _annonce4 = Annonce(
   limitPersonne: 3,
   sqFeet: 200,
   isFav: false,
-  ListImages: [
+  ListPremiem: [
     'assets/images/house1.jpeg',
     'assets/images/indoor1.jpeg',
     'assets/images/indoor2.jpeg',
@@ -77,7 +77,7 @@ final _annonce4 = Annonce(
   ],
 );
 
-final _annonce5 = Annonce(
+final _annonce5 = AnnoncePremiem(
   images: 'assets/images/house2.jpeg',
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 3éme etage o mchemcha 2 chambre ...',
@@ -86,7 +86,7 @@ final _annonce5 = Annonce(
   limitPersonne: 3,
   sqFeet: 200,
   isFav: false,
-  ListImages: [
+  ListPremiem: [
     'assets/images/house1.jpeg',
     'assets/images/indoor1.jpeg',
     'assets/images/indoor2.jpeg',
@@ -96,7 +96,7 @@ final _annonce5 = Annonce(
   ],
 );
 
-final _annonce6 = Annonce(
+final _annonce6 = AnnoncePremiem(
   images: 'assets/images/house5.jpeg',
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 3éme etage o mchemcha 2 chambre ...',
@@ -105,7 +105,7 @@ final _annonce6 = Annonce(
   limitPersonne: 3,
   sqFeet: 200,
   isFav: false,
-  ListImages: [
+  ListPremiem: [
     'assets/images/house1.jpeg',
     'assets/images/indoor1.jpeg',
     'assets/images/indoor2.jpeg',
@@ -115,7 +115,7 @@ final _annonce6 = Annonce(
   ],
 );
 
-final List<Annonce> annonceList = [
+final List<AnnoncePremiem> listPremiem = [
   _annonce1,
   _annonce2,
   _annonce3,
@@ -124,7 +124,3 @@ final List<Annonce> annonceList = [
   _annonce6,
 ];
 
-List<String> categoryListe = [
-  '<\$1500.00',
-  '2-4 rooms',
-];

@@ -1,117 +1,128 @@
-import 'package:EasyHome/app/screen/model/house.dart';
+import 'package:EasyHome/app/screen/Homes/home_details.dart';
+import 'package:EasyHome/app/screen/annonce_parametre/annonce.dart';
 import 'package:flutter/material.dart';
 import 'package:EasyHome/app/screen/data/data.dart';
 
-class Houses extends StatefulWidget {
+class Home extends StatefulWidget {
+  
   @override
-  _HousesState createState() => _HousesState();
+  _HomeState createState() => _HomeState();
 }
 
-class _HousesState extends State<Houses> {
+class _HomeState extends State<Home> {
   Widget _buildHouse(BuildContext context, int index) {
     Size size = MediaQuery.of(context).size;
-    House house = houseList[index];
+    Annonce annonce = annonceList[index];
 
     return GestureDetector(
-      /*onTap: () {
+      onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (_) => DetailsScreen(house: house),
+            builder: (_) => PageDetails(annonce: annonce),
           ),
         );
-      },*/
+      },
+
+      
+
       child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: 25.0, vertical: 25.0 / 2),
-        child: Container(
-          height: 250,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image(
-                      height: 180,
-                      width: size.width,
-                      fit: BoxFit.cover,
-                      image: AssetImage(house.imageUrl),
-                    ),
-                  ),
-                  
-                  Positioned(
-                    right: 25.0 / 2,
-                    top: 25.0 / 2,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15)),
-                      child: IconButton(
-                        icon: house.isFav
-                            ? Icon(
-                                Icons.favorite_rounded,
-                                color: Colors.red,
-                              )
-                            : Icon(
-                                Icons.favorite_border_rounded,
-                                color: Colors.black,
-                              ),
-                        onPressed: () {
-                          setState(() {
-                            house.isFav = !house.isFav;
-                          });
-                        },
+        
+        padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 18.0 / 2),
+       
+          child: Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 20.0,
+                  offset: Offset(5, 15))
+            ],
+            color: Colors.white, borderRadius: BorderRadius.circular(15)),
+            height: 235,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Stack(
+                  children: [
+              ClipRRect(
+                        child: Image(
+                        height: 155,
+                        width: size.width,
+                        fit: BoxFit.cover,
+                        image: AssetImage(annonce.images),
                       ),
                     ),
+                    /*Container(
+                    height: 60.0,
+                    width: 360,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [Colors.black, Colors.black12],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter)),
+                  ),*/
+                    Positioned(
+                      right: 25.0 / 2,
+                      top: 25.0 / 2,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15)),
+                        child: IconButton(
+                          icon: annonce.isFav
+                              ? Icon(
+                                  Icons.favorite_rounded,
+                                  color: Colors.red,
+                                )
+                              : Icon(
+                                  Icons.favorite_border_rounded,
+                                  color: Colors.black,
+                                ),
+                          onPressed: () {
+                            setState(() {
+                              annonce.isFav = !annonce.isFav;
+                            });
+                          },
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Row(
+                    children: [
+                      Text(
+                        '${annonce.price.toStringAsFixed(3)}\ DH',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Row(
+                      children: [
+                        Text(
+                          '${annonce.title}',
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.black.withOpacity(0.4)),
+                        ),
+                      ],
+                    )
                   )
-                ],
-              ),
-              Row(
-                children: [
-                  Text(
-                    '${house.price.toStringAsFixed(3)}\ DH',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: Text(
-                      house.address,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          fontSize: 15, color: Colors.black.withOpacity(0.4)),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text(
-                    '${house.rooms} bedrooms / ',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Text(
-                    '${house.sqFeet} sqft',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              )
-            ],
+              ],
+            ),
           ),
         ),
-      ),
+
     );
   }
 
@@ -120,7 +131,7 @@ class _HousesState extends State<Houses> {
     return Expanded(
         child: ListView.builder(
             physics: BouncingScrollPhysics(),
-            itemCount: houseList.length,
+            itemCount: annonceList.length,
             itemBuilder: (context, index) {
               return _buildHouse(context, index);
             }));

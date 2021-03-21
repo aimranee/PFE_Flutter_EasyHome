@@ -1,42 +1,27 @@
+import 'package:EasyHome/app/common_widgets/buttons.dart';
 import 'package:EasyHome/app/screen/Homes/Homes.dart';
+import 'package:EasyHome/app/screen/Premiem.dart';
+import 'package:EasyHome/app/screen/app_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_login_facebook/flutter_login_facebook.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
-class HomePagee extends StatelessWidget {
+class HomePagee extends StatefulWidget {
+  @override
+  _HomePageeState createState() => _HomePageeState();
+}
+
+class _HomePageeState extends State<HomePagee> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Hello Appbar"),
-        leading: GestureDetector(
-          onTap: () {/* Write listener code here */},
-          child: Icon(
-            Icons.menu, // add custom icons also
-          ),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.only(top: 10.0 * 2),
+        child: Column(
+          children: [AppBaar(), DiffStyles()],
         ),
-        actions: <Widget>[
-          Padding(
-              padding: EdgeInsets.only(right: 20.0),
-              child: GestureDetector(
-                onTap: () {},
-                child: Icon(
-                  Icons.search,
-                  size: 26.0,
-                ),
-              )),
-          Padding(
-              padding: EdgeInsets.only(right: 20.0),
-              child: GestureDetector(
-                onTap: () {},
-                child: Icon(Icons.more_vert),
-              )),
-        ],
-      ),
-
-
-      body: Column(
-        children: [
-          Houses(),
-        ],
       ),
     );
   }
