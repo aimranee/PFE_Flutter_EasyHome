@@ -1,5 +1,4 @@
-import 'package:EasyHome/app/screen/Homes/Homes.dart';
-import 'package:EasyHome/app/screen/annonce_parametre/annonce.dart';
+import 'package:EasyHome/app/screen/class/annonce_parametre/annonce.dart';
 import 'package:flutter/material.dart';
 
 class PageDetails extends StatefulWidget {

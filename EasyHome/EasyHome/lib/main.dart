@@ -1,8 +1,8 @@
+import 'package:EasyHome/app/screen/home/Home_screen.dart';
 import 'package:EasyHome/app/sing_in/landing_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import 'app/screen/Home_screen.dart';
 
 
 Future<void> main() async {
@@ -18,11 +18,15 @@ class MyApp extends StatelessWidget {
       title: 'EasyHome',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xFFFFC61F),
         scaffoldBackgroundColor: Colors.white,
+        textTheme: TextTheme(
+          body1: TextStyle(color: Color(0xFFB5BFD0)),
+          body2: TextStyle(color: Color(0xFFB5BFD0)),
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePagee(),
+      home: HomeScreen(),
     );
   }
 }

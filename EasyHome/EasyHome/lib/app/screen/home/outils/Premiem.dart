@@ -1,5 +1,5 @@
-import 'package:EasyHome/app/screen/annonce_parametre/annoncePremiem.dart';
-import 'package:EasyHome/app/screen/data/dataPremiem.dart';
+import 'package:EasyHome/app/screen/class/annonce_parametre/annoncePremiem.dart';
+import 'package:EasyHome/app/screen/class/data/dataPremiem.dart';
 import 'package:EasyHome/app/sing_in/background.dart';
 import 'package:flutter/material.dart';
 
@@ -8,33 +8,29 @@ class DiffStyles extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     AnnoncePremiem annoncePremiem = listPremiem[index];
 
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 28.0 / 2),
-          child: Container(
-            width: size.width * 0.5,
-            height: size.height * 0.2,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15.0),
-              child: Image(
-                height: size.height * 0.4,
-                width: size.width * 0.6,
-                fit: BoxFit.cover,
-                image: AssetImage(annoncePremiem.images),
+    return Container(
+        decoration: new BoxDecoration(color: Colors.yellow[200]),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 26.0 / 2),
+              child: Container(
+                width: size.width * 0.5,
+                height: size.height * 0.2,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Image(
+                    height: size.height * 0.4,
+                    width: size.width * 0.6,
+                    fit: BoxFit.cover,
+                    image: AssetImage(annoncePremiem.images),
+                  ),
+                ),
               ),
-            ),
-            decoration: BoxDecoration(boxShadow: [
-              BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
-                  blurRadius: 20.0,
-                  offset: Offset(5, 15))
-            ]),
-          ),
-        )
-      ],
-    );
+            )
+          ],
+        ));
   }
 
   @override
@@ -67,7 +63,7 @@ class DiffStyles extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 20.0 / 2),
+          padding: const EdgeInsets.only(top: 0.0),
           child: Container(
             height: size.height * 0.3,
             child: ListView.builder(
