@@ -4,7 +4,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
           body1: TextStyle(color: Color(0xFFB5BFD0)),
           body2: TextStyle(color: Color(0xFFB5BFD0)),
         ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      //  visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomeScreen(),
     );

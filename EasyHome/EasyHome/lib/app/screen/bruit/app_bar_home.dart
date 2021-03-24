@@ -4,9 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 AppBar buildAppBar(BuildContext context) {
   return AppBar(
     backgroundColor: Colors.white,
-    elevation: 0,
+    elevation: 1,
     leading: IconButton(
-      icon: SvgPicture.asset("asset/icons/menu.svg"),
+      icon: Icon(Icons.menu, color: Colors.grey,),
       onPressed: () {},
     ),
     title: RichText(
@@ -16,6 +16,7 @@ AppBar buildAppBar(BuildContext context) {
               .title
               .copyWith(fontWeight: FontWeight.bold),
           children: [
+            TextSpan(text: "             ", style: TextStyle(color: Colors.white)),
             TextSpan(text: "Easy", style: TextStyle(color: Colors.grey)),
             TextSpan(text: "Home", style: TextStyle(color: Colors.lightBlue)),
           ]),

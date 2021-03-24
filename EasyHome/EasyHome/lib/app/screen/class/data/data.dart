@@ -1,6 +1,7 @@
 import 'package:EasyHome/app/screen/class/annonce_parametre/annonce.dart';
 
 final _annonce1 = Annonce(
+  title: "this home is good",
   images: 'assets/images/house3.jpeg',
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 2éme etage o mchemcha 3 chambre ...',
@@ -20,6 +21,7 @@ final _annonce1 = Annonce(
 );
 
 final _annonce2 = Annonce(
+  title: "this home is good",
   images: 'assets/images/house3.jpeg',
   address: 'Elghawa, Saad Allah Hined',
   description:
@@ -40,6 +42,7 @@ final _annonce2 = Annonce(
 );
 
 final _annonce3 = Annonce(
+  title: "this home is good",
   images: 'assets/images/house5.jpeg',
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 3éme etage o mchemcha 2 chambre ...',
@@ -59,6 +62,7 @@ final _annonce3 = Annonce(
 );
 
 final _annonce4 = Annonce(
+  title: "this home is good",
   images: 'assets/images/house1.jpeg',
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 3éme etage o mchemcha 2 chambre ...',
@@ -79,6 +83,8 @@ final _annonce4 = Annonce(
 
 final _annonce5 = Annonce(
   images: 'assets/images/house2.jpeg',
+  title: "best home for ever",
+
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 3éme etage o mchemcha 2 chambre ...',
   price: 1300.00,
@@ -98,6 +104,7 @@ final _annonce5 = Annonce(
 
 final _annonce6 = Annonce(
   images: 'assets/images/house5.jpeg',
+  title: 'best home for ever',
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 3éme etage o mchemcha 2 chambre ...',
   price: 1900.00,
