@@ -30,6 +30,18 @@ class _HomeDetailsPremiemState extends State<HomeDetailsPremiem> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Row(
+                    children: [
+                      Icon(Icons.star,size: 16,color: Colors.amber,),
+                      Icon(Icons.star,size: 16,color: Colors.amber,),
+                      Icon(Icons.star,size: 16,color: Colors.amber,),
+                      Icon(Icons.star,size: 16,color: Colors.amber,),
+                      Icon(Icons.star,size: 16,color: Colors.grey.shade500,),
+                    ],
+                  ),
+                ),
                     Text(
                       '\$${widget.annoncePremiem.price.toStringAsFixed(2)}',
                       style: TextStyle(
@@ -186,7 +198,7 @@ class _HomeDetailsPremiemState extends State<HomeDetailsPremiem> {
                       ],
                     ),
                   ),
-                ), 
+                ),
               ],
             ),
           ),

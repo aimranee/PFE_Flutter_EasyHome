@@ -31,6 +31,38 @@ class _HomeDetailsState extends State<HomeDetails> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 20),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            size: 16,
+                            color: Colors.amber,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 16,
+                            color: Colors.amber,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 16,
+                            color: Colors.amber,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 16,
+                            color: Colors.amber,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 16,
+                            color: Colors.grey.shade500,
+                          ),
+                        ],
+                      ),
+                    ),
                     Text(
                       '\$${widget.annonce.price.toStringAsFixed(2)}',
                       style: TextStyle(

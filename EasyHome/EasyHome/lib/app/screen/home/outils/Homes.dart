@@ -117,34 +117,14 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: Column(children: [
-      Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 30.0,
-          vertical: 5,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Annonce',
-              style: TextStyle(
-                fontSize: 24,
-                letterSpacing: 1.5,
-              ),
-            ),
-          ],
-        ),
-      ),
+    return 
       Expanded(
           child: ListView.builder(
               physics: BouncingScrollPhysics(),
               itemCount: annonceList.length,
               itemBuilder: (context, index) {
                 return _buildHouse(context, index);
-              }))
-    ]));
+              }));
   }
 }
 
