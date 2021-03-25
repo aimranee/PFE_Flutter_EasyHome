@@ -1,4 +1,4 @@
-name: EasyHome
+name: easyhome
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -31,6 +31,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   firebase_core: ^1.0.0
   firebase_auth: ^1.0.0
+  firebase_storage: ^8.0.0
   google_sign_in: ^5.0.0
   flutter_login_facebook: ^1.0.0
   cloud_firestore: ^1.0.1

@@ -13,8 +13,7 @@ class AnnoncePremiem {
   List<String> ListPremiem;
 
   AnnoncePremiem(
-      {
-      this.userName,
+      {this.userName,
       this.title,
       this.images,
       this.ListPremiem,

@@ -1,5 +1,6 @@
-import 'package:EasyHome/app/screen/class/annonce_parametre/annoncePremiem.dart';
-import 'package:EasyHome/app/screen/class/data/dataPremiem.dart';
+import 'package:easyhome/app/screen/class/annonce_parametre/annoncePremiem.dart';
+import 'package:easyhome/app/screen/class/data/dataPremiem.dart';
+import 'package:easyhome/app/screen/detail/home_detail_premiem.dart';
 import 'package:flutter/material.dart';
 
 class PremiemList extends StatelessWidget {
@@ -7,28 +8,37 @@ class PremiemList extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     AnnoncePremiem annoncePremiem = listPremiem[index];
 
-    return Container(
-        decoration: new BoxDecoration(color: Colors.yellow[100]),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0 / 2),
-              child: Container(
-                width: size.width * 0.4,
-                height: size.height * 0.16,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15.0),
-                  child: Image(
-                    fit: BoxFit.cover,
-                    image: AssetImage(annoncePremiem.images),
+    return GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) =>
+                  PagePremiemDetails(annoncePremiem: annoncePremiem),
+            ),
+          );
+        },
+        child: Container(
+            decoration: new BoxDecoration(color: Colors.yellow[100]),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0 / 2),
+                  child: Container(
+                    width: size.width * 0.4,
+                    height: size.height * 0.16,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Image(
+                        fit: BoxFit.cover,
+                        image: AssetImage(annoncePremiem.images),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            )
-          ],
-        )
-    );
+                )
+              ],
+            )));
   }
 
   @override

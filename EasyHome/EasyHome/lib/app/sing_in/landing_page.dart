@@ -1,7 +1,7 @@
-import 'package:EasyHome/app/screen/bruit/home/test.dart';
+import 'package:easyhome/app/screen/bruit/home/test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:EasyHome/app/sing_in/sign_in_page.dart';
+import 'package:easyhome/app/sing_in/sign_in_page.dart';
 
 class LandingPage extends StatefulWidget {
   @override

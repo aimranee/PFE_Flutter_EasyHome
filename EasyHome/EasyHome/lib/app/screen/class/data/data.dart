@@ -1,4 +1,5 @@
-import 'package:EasyHome/app/screen/class/annonce_parametre/annonce.dart';
+import 'package:easyhome/app/screen/class/annonce_parametre/annonce.dart';
+
 
 final _annonce1 = Annonce(
   title: "this home is good",
@@ -84,7 +85,6 @@ final _annonce4 = Annonce(
 final _annonce5 = Annonce(
   images: 'assets/images/house2.jpeg',
   title: "best home for ever",
-
   address: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 3éme etage o mchemcha 2 chambre ...',
   price: 1300.00,
@@ -131,3 +131,23 @@ final List<Annonce> annonceList = [
   _annonce6,
 ];
 
+
+/*
+Future _getImage(BuildContext context, String imageName) async {
+  Image image;
+  await FireStorageService.loadImge(context, imageName).then((value) {
+    image = Image.network(
+      value.toString(),
+      fit: BoxFit.scaleDown,
+    );
+  });
+  return image;
+}
+
+class FireStorageService extends Annonce {
+  FireStorageService();
+  static Future<dynamic> loadImge(BuildContext context, String Image) async {
+    return await FirebaseStorage.instance.ref().child(Image).getDownloadURL();
+  }
+}
+*/

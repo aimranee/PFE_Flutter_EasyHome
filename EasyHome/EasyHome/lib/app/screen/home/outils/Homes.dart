@@ -1,6 +1,7 @@
-import 'package:EasyHome/app/screen/class/annonce_parametre/annonce.dart';
-import 'package:EasyHome/app/screen/class/data/data.dart';
-import 'package:EasyHome/app/screen/detail/home_detail.dart';
+import 'package:easyhome/app/screen/class/annonce_parametre/annonce.dart';
+import 'package:easyhome/app/screen/class/data/data.dart';
+import 'package:easyhome/app/screen/detail/home_detail.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -38,14 +39,13 @@ class _HomeState extends State<Home> {
               Stack(
                 children: [
                   ClipRRect(
-                    child: Image(
-                      height: 120,
-                      width: size.width,
-                      fit: BoxFit.cover,
-                      image: AssetImage(annonce.images),
-                    ),
-                  ),
-                  
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Image(
+                        height: 120,
+                        width: size.width,
+                        fit: BoxFit.cover,
+                        image: AssetImage(annonce.images),
+                      )),
                   Positioned(
                     right: 20.0 / 2,
                     top: 20.0 / 2,
@@ -104,12 +104,10 @@ class _HomeState extends State<Home> {
                         '${annonce.title}',
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          fontSize: 15, color: Colors.black.withOpacity(0.4)
-                        ),
-                    ),
-                  ],
-                )
-              )
+                            fontSize: 15, color: Colors.black.withOpacity(0.4)),
+                      ),
+                    ],
+                  ))
             ],
           ),
         ),
@@ -149,3 +147,5 @@ class _HomeState extends State<Home> {
     ]));
   }
 }
+
+

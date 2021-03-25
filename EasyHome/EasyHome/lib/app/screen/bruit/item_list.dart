@@ -1,5 +1,5 @@
-import 'package:EasyHome/app/screen/bruit/item_card.dart';
-import 'package:EasyHome/app/screen/detail/home_detail.dart';
+import 'package:easyhome/app/screen/bruit/item_card.dart';
+import 'package:easyhome/app/screen/detail/home_detail.dart';
 import 'package:flutter/material.dart';
 
 class ItemList extends StatelessWidget {

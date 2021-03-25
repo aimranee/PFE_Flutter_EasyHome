@@ -1,4 +1,4 @@
-import 'package:EasyHome/app/screen/class/annonce_parametre/annoncePremiem.dart';
+import 'package:easyhome/app/screen/class/annonce_parametre/annoncePremiem.dart';
 
 final _annonce1 = AnnoncePremiem(
   images: 'assets/images/house3.jpeg',

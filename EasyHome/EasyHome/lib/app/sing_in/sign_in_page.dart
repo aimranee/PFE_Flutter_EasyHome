@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:EasyHome/app/sing_in/background.dart';
-import 'package:EasyHome/app/sing_in/sign_in_button.dart';
-import 'package:EasyHome/app/sing_in/social_sign_in_button.dart';
+import 'package:easyhome/app/sing_in/background.dart';
+import 'package:easyhome/app/sing_in/sign_in_button.dart';
+import 'package:easyhome/app/sing_in/social_sign_in_button.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 

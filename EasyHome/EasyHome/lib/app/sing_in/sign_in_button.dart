@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:EasyHome/app/common_widgets/custom_raised_button.dart';
+import 'package:easyhome/app/common_widgets/custom_raised_button.dart';
 
 class SingInButton extends CustomRaisedButton {
   SingInButton(

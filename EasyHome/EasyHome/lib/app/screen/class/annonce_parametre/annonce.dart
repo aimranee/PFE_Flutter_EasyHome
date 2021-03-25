@@ -1,3 +1,6 @@
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
+
 class Annonce {
   String userName;
   String title;
@@ -26,4 +29,11 @@ class Annonce {
       this.sqFeet,
       this.time,
       this.isFav});
+}
+
+class FireStorageService extends Annonce {
+  FireStorageService();
+  static Future<dynamic> loadImge(BuildContext context, String Image) async {
+    return await FirebaseStorage.instance.ref().child(Image).getDownloadURL();
+  }
 }

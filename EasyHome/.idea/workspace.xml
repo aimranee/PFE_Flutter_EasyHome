@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8845752c-d881-4e5c-a110-908ebf3d3a75" name="Default Changelist" comment="" />
+    <list default="true" id="8845752c-d881-4e5c-a110-908ebf3d3a75" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/flutter_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flutter_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyHome/lib/app/common_widgets/buttons.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyHome/lib/app/screen/class/data/data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/EasyHome/lib/app/screen/class/data/data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyHome/lib/app/screen/detail/home_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/EasyHome/lib/app/screen/detail/home_detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyHome/lib/app/screen/home/Home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/EasyHome/lib/app/screen/home/Home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyHome/lib/app/screen/home/outils/Homes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/EasyHome/lib/app/screen/home/outils/Homes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyHome/lib/app/screen/home/outils/Premiem.dart" beforeDir="false" afterPath="$PROJECT_DIR$/EasyHome/lib/app/screen/home/outils/Premiem.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyHome/lib/app/screen/home/outils/body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/EasyHome/lib/app/screen/home/outils/body.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyHome/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/EasyHome/lib/main.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1p2Omxhvgx6i5lDWNSOnkdksQAZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -21,7 +37,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunManager">
@@ -51,13 +67,17 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1614915456664" />
+    <state x="100" y="100" width="1166" height="538" key="AVDManager" timestamp="1616676518262">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="100" y="100" width="1166" height="538" key="AVDManager/0.0.1366.738@0.0.1366.738" timestamp="1616676518261" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1614915532584">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1614915532584" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1614915537562">
+    <state x="184" y="0" key="SettingsEditor" timestamp="1616676407557">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1614915537562" />
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1616676407557" />
   </component>
 </project>
