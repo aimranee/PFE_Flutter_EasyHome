@@ -19,9 +19,7 @@ class PremiemList extends StatelessWidget {
           );
         },
         child: Container(
-          
             decoration: new BoxDecoration(color: Colors.yellow[100]),
-            
             child: Stack(
               alignment: Alignment.center,
               children: [
@@ -49,7 +47,6 @@ class PremiemList extends StatelessWidget {
 
     return Column(
       children: [
-        
         Padding(
           padding: const EdgeInsets.only(top: 0.0),
           child: Container(

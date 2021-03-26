@@ -12,35 +12,22 @@ class AppBarDetails extends StatelessWidget {
         top: 20.0,
       ),
       child: Container(
-        height: size.height * 0.1,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white.withOpacity(0.4)),
-                    borderRadius: BorderRadius.circular(15)),
-                child: Icon(
-                  Icons.arrow_back_rounded,
-                  color: Colors.white,
-                ),
-              ),
+        height: size.height * 0.06,
+        child: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black.withOpacity(1)),
+                borderRadius: BorderRadius.circular(40)),
+            child: Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.black,
             ),
-            Container(
-              height: 50,
-              width: 50,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white.withOpacity(0.4)),
-                  borderRadius: BorderRadius.circular(15)),
-              child: Icon(Icons.favorite_border_rounded, color: Colors.white),
-            ),
-          ],
+          ),
         ),
       ),
     );

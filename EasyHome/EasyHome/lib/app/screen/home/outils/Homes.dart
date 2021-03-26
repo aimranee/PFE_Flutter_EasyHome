@@ -1,7 +1,6 @@
 import 'package:easyhome/app/screen/class/annonce_parametre/annonce.dart';
 import 'package:easyhome/app/screen/class/data/data.dart';
 import 'package:easyhome/app/screen/detail/home_detail.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -117,15 +116,12 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-      Expanded(
-          child: ListView.builder(
-              physics: BouncingScrollPhysics(),
-              itemCount: annonceList.length,
-              itemBuilder: (context, index) {
-                return _buildHouse(context, index);
-              }));
+    return Expanded(
+        child: ListView.builder(
+            physics: BouncingScrollPhysics(),
+            itemCount: annonceList.length,
+            itemBuilder: (context, index) {
+              return _buildHouse(context, index);
+            }));
   }
 }
-
-
