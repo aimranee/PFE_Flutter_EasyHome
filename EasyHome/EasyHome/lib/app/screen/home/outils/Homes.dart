@@ -23,14 +23,14 @@ class _HomeState extends State<Home> {
         );
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 18.0 / 2),
+        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
         child: Container(
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
                 color: Colors.black.withOpacity(0.3),
-                blurRadius: 20.0,
-                offset: Offset(5, 15))
-          ], color: Colors.white, borderRadius: BorderRadius.circular(15)),
+                blurRadius: 10.0,
+                offset: Offset(2, 4))
+          ], color: Colors.white, borderRadius: BorderRadius.circular(10)),
           height: 200,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
               Stack(
                 children: [
                   ClipRRect(
-                      borderRadius: BorderRadius.circular(15.0),
+                      borderRadius: BorderRadius.circular(10.0),
                       child: Image(
                         height: 120,
                         width: size.width,
@@ -51,7 +51,7 @@ class _HomeState extends State<Home> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(15)),
+                          borderRadius: BorderRadius.circular(10)),
                       child: IconButton(
                         icon: annonce.isFav
                             ? Icon(

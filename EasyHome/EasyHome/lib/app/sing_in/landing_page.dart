@@ -11,6 +11,7 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   User _user;
 
+
   @override
   void initState() {
     super.initState();
@@ -22,6 +23,7 @@ class _LandingPageState extends State<LandingPage> {
       _user = user;
     });
   }
+
 
   @override
   Widget build(BuildContext context) {

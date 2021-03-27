@@ -1,8 +1,11 @@
+import 'package:easyhome/app/sing_in/composant/background.dart';
+import 'package:easyhome/app/sing_in/composant/email_sign_in.dart';
+import 'package:easyhome/app/sing_in/composant/email_sign_up_form.dart';
+import 'package:easyhome/app/sing_in/composant/register.dart';
+import 'package:easyhome/app/sing_in/composant/sign_in_button.dart';
+import 'package:easyhome/app/sing_in/composant/social_sign_in_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:easyhome/app/sing_in/background.dart';
-import 'package:easyhome/app/sing_in/sign_in_button.dart';
-import 'package:easyhome/app/sing_in/social_sign_in_button.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -68,12 +71,33 @@ class SignInPage extends StatelessWidget {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: _buildContent(), backgroundColor: Colors.grey[200]);
+  void _signInWithEmail(BuildContext context) {
+    Navigator.of(context).push(
+      // navigation in flutter
+      MaterialPageRoute<void>(
+        fullscreenDialog: true, // hiya li katle3 lpage bdiik tarii9a
+        builder: (context) => EmailSignInPage(),
+      ),
+    );
   }
 
-  Widget _buildContent() {
+  void _register(BuildContext context) {
+    Navigator.of(context).push(
+      // navigation in flutter
+      MaterialPageRoute<void>(
+        fullscreenDialog: true, // hiya li katle3 lpage bdiik tarii9a
+        builder: (context) => EmailSignUpPage(),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: _buildContent(context), backgroundColor: Colors.grey[200]);
+  }
+
+  Widget _buildContent(BuildContext context) {
     return Background(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -88,17 +112,8 @@ class SignInPage extends StatelessWidget {
               style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.w600),
             ),
           ),
-          Container(
-            alignment: Alignment.centerLeft,
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              'Here you can find your home',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
-            ),
-          ),
           SizedBox(
-            height: 40.0,
+            height: 50.0,
           ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -125,6 +140,27 @@ class SignInPage extends StatelessWidget {
           ),
           SizedBox(
             height: 8.0,
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: SingInButton(
+              text: 'Sing in with email',
+              textColor: Colors.white,
+              color: Colors.teal,
+              onPressed: () => _signInWithEmail(context),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Avez-vous un compte ?"),
+                TextButton(
+                    onPressed: () => _register(context),
+                    child: Text("Register"))
+              ],
+            ),
           ),
         ],
       ),

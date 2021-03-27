@@ -1,6 +1,6 @@
 import 'package:easyhome/app/screen/class/annonce_parametre/annoncePremiem.dart';
-import 'package:easyhome/app/screen/class/annonce_parametre/carousel_images.dart';
 import 'package:easyhome/app/screen/detail/composant/app_bar.dart';
+import 'package:easyhome/app/screen/detail/composant/carousel_images.dart';
 import 'package:easyhome/app/screen/detail/composant/home_details_premiem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';

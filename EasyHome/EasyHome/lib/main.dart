@@ -1,4 +1,6 @@
+import 'package:easyhome/app/screen/bottun_bar.dart';
 import 'package:easyhome/app/screen/home/Home_screen.dart';
+import 'package:easyhome/app/sing_in/landing_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -15,15 +17,11 @@ class MyApp extends StatelessWidget {
       title: 'EasyHome',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xFFFFC61F),
+        primaryColor: Colors.lightBlue,
         scaffoldBackgroundColor: Colors.white,
-        textTheme: TextTheme(
-          body1: TextStyle(color: Color(0xFFB5BFD0)),
-          body2: TextStyle(color: Color(0xFFB5BFD0)),
-        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeScreen(),
+      home: LandingPage(),
     );
   }
 }
