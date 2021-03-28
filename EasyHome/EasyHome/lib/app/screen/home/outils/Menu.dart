@@ -11,13 +11,32 @@ class _MenuBarState extends State<MenuBar> {
   Widget build(BuildContext context) {
     final user = UserM.current;
     return Container(
+        color: Colors.white,
+        width: 250,
         child: ListView(
-      children: [
-        UserAccountsDrawerHeader(
-          accountEmail: Text(user.email ?? "Aucun"),
-          accountName: Text(user.userName ?? "aucun"),
-        )
-      ],
-    ));
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text(
+                user.userName ?? "aucun",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              accountEmail: Text(
+                user.email ?? "Aucun",
+                style: TextStyle(color: Colors.white, fontSize: 15),
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.white,
+                backgroundImage:
+                    user.image != null ? NetworkImage(user.image) : null,
+                child: user.image != null
+                    ? Container()
+                    : Icon(
+                        Icons.person,
+                        color: Colors.lightBlue,
+                      ),
+              ),
+            )
+          ],
+        ));
   }
 }

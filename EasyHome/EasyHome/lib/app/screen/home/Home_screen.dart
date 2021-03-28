@@ -2,7 +2,6 @@ import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:easyhome/app/screen/home/outils/Homes.dart';
 import 'package:easyhome/app/screen/home/outils/Menu.dart';
 import 'package:easyhome/app/screen/home/outils/Premiem.dart';
-import 'package:easyhome/app/screen/home/outils/app_bar_home.dart';
 import 'package:easyhome/app/services/auth.dart';
 import 'package:easyhome/app/services/db.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,14 +15,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  User user;
+  UserM userM;
   AuthServices auth = AuthServices();
 
   Future<void> getUser() async {
-    // User user = await auth.user;
+    User user = await auth.user;
     final userResult = await DBServices().getUser(user.uid);
     setState(() {
-      user = userResult;
+      userM = userResult;
       UserM.current = userResult;
     });
   }

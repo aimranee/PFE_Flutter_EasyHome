@@ -61,7 +61,8 @@ class Register extends StatelessWidget {
                               email, passWord, userName, phone);
                           if (register != null) {
                             Navigator.of(context).pop();
-                            if (register) Navigator.of(context).pop();
+                          if (register) 
+                          Navigator.of(context).pop();
                           }
                         }
                       },

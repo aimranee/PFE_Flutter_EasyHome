@@ -1,8 +1,4 @@
-import 'package:easyhome/app/new/loginPage.dart';
 import 'package:easyhome/app/new/statutAuth.dart';
-import 'package:easyhome/app/screen/home/Home_screen.dart';
-import 'package:easyhome/app/sing_in/composant/login.dart';
-import 'package:easyhome/app/sing_in/landing_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

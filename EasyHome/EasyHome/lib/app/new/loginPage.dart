@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
     Navigator.of(context).push(
       // navigation in flutter
       MaterialPageRoute<void>(
-        // fullscreenDialog: true, // hiya li katle3 lpage bdiik tarii9a
+        fullscreenDialog: true, // hiya li katle3 lpage bdiik tarii9a
         builder: (context) => EmailSignUpPage(),
       ),
     );
