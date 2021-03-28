@@ -1,5 +1,5 @@
-import 'package:easyhome/app/screen/bottun_bar.dart';
 import 'package:easyhome/app/screen/home/Home_screen.dart';
+import 'package:easyhome/app/services/auth.dart';
 import 'package:easyhome/app/sing_in/landing_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LandingPage(),
+      home: HomeScreen(),
     );
   }
 }

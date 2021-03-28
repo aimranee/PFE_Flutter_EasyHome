@@ -1,10 +1,12 @@
+import 'package:easyhome/app/services/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key, @required this.onSignOut}) : super(key: key);
+  const HomePage({Key key, @required this.auth, @required this.onSignOut}) : super(key: key);
+  final AuthBase auth;
   final VoidCallback onSignOut;
 
   Future<void> _signOut() async {
@@ -13,7 +15,7 @@ class HomePage extends StatelessWidget {
       await googleSignIn.signOut();
       final facebookSignIn = FacebookLogin();
       await facebookSignIn.logOut();
-      await FirebaseAuth.instance.signOut();
+      await auth.signOut;
       onSignOut();
     } catch (e) {
       print(e.toString());

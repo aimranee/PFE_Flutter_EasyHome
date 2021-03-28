@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 AppBar buildAppBar(BuildContext context) {
   return AppBar(
     backgroundColor: Colors.white,
-    elevation: 1,
-    leading: IconButton(
-      icon: Icon(Icons.menu, color: Colors.grey,),
-      onPressed: () {},
-    ),
+    elevation: 2,
     title: RichText(
       text: TextSpan(
           style: Theme.of(context)
@@ -15,7 +11,8 @@ AppBar buildAppBar(BuildContext context) {
               .title
               .copyWith(fontWeight: FontWeight.bold),
           children: [
-            TextSpan(text: "             ", style: TextStyle(color: Colors.white)),
+            TextSpan(
+                text: "             ", style: TextStyle(color: Colors.white)),
             TextSpan(text: "Easy", style: TextStyle(color: Colors.grey)),
             TextSpan(text: "Home", style: TextStyle(color: Colors.lightBlue)),
           ]),

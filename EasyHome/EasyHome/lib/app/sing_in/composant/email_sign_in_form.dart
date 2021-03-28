@@ -1,22 +1,13 @@
+import 'package:easyhome/app/services/auth.dart';
 import 'package:easyhome/app/sing_in/composant/email_sign_up_form.dart';
 import 'package:easyhome/app/sing_in/composant/loading.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class EmailSignInForm extends StatelessWidget {
+  Auth auth = Auth();
   String email, passWord;
   final keys = GlobalKey<FormState>();
-
-  Future<bool> _signIn(String email, String password) async {
-    try {
-      final result = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
-      if (result.user != null) return true;
-      return false;
-    } catch (e) {
-      return false;
-    }
-  }
 
   void _register(BuildContext context) {
     Navigator.of(context).push(
@@ -69,7 +60,7 @@ class EmailSignInForm extends StatelessWidget {
                       onPressed: () async {
                         if (keys.currentState.validate()) {
                           loading(context);
-                          bool login = await _signIn(email, passWord);
+                          bool login = await auth.signIn(email, passWord);
                           if (login != null) {
                             Navigator.of(context).pop();
                             if (!login) print("incorrect");

@@ -1,21 +1,11 @@
+import 'package:easyhome/app/services/auth.dart';
 import 'package:easyhome/app/sing_in/composant/loading.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatelessWidget {
-  String email, passWord;
+  Auth auth = Auth();
+  String email, passWord, userName, phone;
   final keys = GlobalKey<FormState>();
-
-  Future<bool> signup(String email, String password) async {
-    try {
-      final result = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
-      if (result.user != null) return true;
-      return false;
-    } catch (e) {
-      return false;
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +26,20 @@ class Register extends StatelessWidget {
                     height: 20,
                   ),
                   TextFormField(
+                      keyboardType: TextInputType.text,
+                      onChanged: (e) => userName = e,
+                      validator: (e) => e.isEmpty ? "champ vide" : null,
+                      decoration: InputDecoration(labelText: "UserName")),
+                  TextFormField(
+                      keyboardType: TextInputType.emailAddress,
                       onChanged: (e) => email = e,
                       validator: (e) => e.isEmpty ? "champ vide" : null,
-                      decoration: InputDecoration(
-                          hintText: "Entrer votre email", labelText: "Email")),
+                      decoration: InputDecoration(labelText: "Email")),
+                  TextFormField(
+                      keyboardType: TextInputType.phone,
+                      onChanged: (e) => phone = e,
+                      validator: (e) => e.isEmpty ? "champ vide" : null,
+                      decoration: InputDecoration(labelText: "Phone")),
                   TextFormField(
                     obscureText: true,
                     onChanged: (e) => passWord = e,
@@ -48,9 +48,7 @@ class Register extends StatelessWidget {
                         : e.length < 6
                             ? "le password doit etre plus de 6"
                             : null,
-                    decoration: InputDecoration(
-                        hintText: "Entrer votre PassWord",
-                        labelText: "PassWord"),
+                    decoration: InputDecoration(labelText: "PassWord"),
                   ),
                   SizedBox(
                     height: 20,
@@ -59,7 +57,8 @@ class Register extends StatelessWidget {
                       onPressed: () async {
                         if (keys.currentState.validate()) {
                           loading(context);
-                          bool register = await signup(email, passWord);
+                          bool register = await auth.signUp(
+                              email, passWord, userName, phone);
                           if (register != null) {
                             Navigator.of(context).pop();
                             if (!register) Navigator.of(context).pop();
