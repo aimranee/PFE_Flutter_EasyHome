@@ -1,4 +1,4 @@
-import 'package:easyhome/app/sing_in/composant/register.dart';
+import 'package:easyhome/app/new/register.dart';
 import 'package:flutter/material.dart';
 
 class EmailSignUpPage extends StatelessWidget {
@@ -8,7 +8,8 @@ class EmailSignUpPage extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 2,
-          title: Text('               Sign Up')),
+          centerTitle: true,
+          title: Text('Sign Up')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Card(child: Register()),

@@ -1,7 +1,5 @@
 import 'package:easyhome/app/services/auth.dart';
 import 'package:easyhome/app/sing_in/composant/background.dart';
-import 'package:easyhome/app/sing_in/composant/email_sign_in.dart';
-import 'package:easyhome/app/sing_in/composant/email_sign_up_form.dart';
 import 'package:easyhome/app/sing_in/composant/sign_in_button.dart';
 import 'package:easyhome/app/sing_in/composant/social_sign_in_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,24 +8,65 @@ import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class SignInPage extends StatelessWidget {
-  const SignInPage({Key key, @required this.auth, @required this.onSignIn})
-      : super(key: key);
-  final AuthBase auth;
+  const SignInPage({Key key, @required this.onSignIn}) : super(key: key);
+// final AuthBase auth;
   final void Function(User) onSignIn;
 
   Future<User> _signInWithGoogle() async {
     try {
-      await auth.signInWithGoogle();
+      final googleSignIn = GoogleSignIn();
+      final googleUser = await googleSignIn.signIn();
+      if (googleUser != null) {
+        final googleAuth = await googleUser.authentication;
+        if (googleAuth.idToken != null) {
+          final userCredential = await FirebaseAuth.instance
+              .signInWithCredential(GoogleAuthProvider.credential(
+            idToken: googleAuth.idToken,
+            accessToken: googleAuth.accessToken,
+          ));
+          return userCredential.user;
+        } else {
+          throw FirebaseAuthException(
+            code: 'ERROR_MESSING_GOOGLE_ID_TOKEN',
+            message: 'Missing Google ID Token',
+          );
+        }
+      } else {
+        throw FirebaseAuthException(
+          code: 'ERROR_ABORTED_BY_USER',
+          message: 'Sign in aborted by user',
+        );
+      }
     } catch (e) {
       print(e.toString());
     }
   }
-  
+
   Future<User> _signInWithFacebook() async {
-    try {
-      await auth.signInWithFacebook();
-    } catch (e) {
-      print(e.toString());
+    final fb = FacebookLogin();
+    final responce = await fb.logIn(permissions: [
+      FacebookPermission.publicProfile,
+      FacebookPermission.email,
+    ]);
+    switch (responce.status) {
+      case FacebookLoginStatus.success:
+        final accessToken = responce.accessToken;
+        final userCredential = await FirebaseAuth.instance.signInWithCredential(
+          FacebookAuthProvider.credential(accessToken.token),
+        );
+        return userCredential.user;
+      case FacebookLoginStatus.cancel:
+        throw FirebaseAuthException(
+          code: 'ERROR_ABORTED_BY_USER',
+          message: 'Sign in aborted by user',
+        );
+      case FacebookLoginStatus.error:
+        throw FirebaseAuthException(
+          code: 'ERROR_FACEBOOK_LOGIN_FAILED',
+          message: responce.error.developerMessage,
+        );
+      default:
+        throw UnimplementedError();
     }
   }
 
@@ -36,17 +75,7 @@ class SignInPage extends StatelessWidget {
       // navigation in flutter
       MaterialPageRoute<void>(
         fullscreenDialog: true, // hiya li katle3 lpage bdiik tarii9a
-        builder: (context) => EmailSignInPage(),
-      ),
-    );
-  }
-
-  void _register(BuildContext context) {
-    Navigator.of(context).push(
-      // navigation in flutter
-      MaterialPageRoute<void>(
-        fullscreenDialog: true, // hiya li katle3 lpage bdiik tarii9a
-        builder: (context) => EmailSignUpPage(),
+        //  builder: (context) => EmailSignInPage(),
       ),
     );
   }
@@ -82,7 +111,7 @@ class SignInPage extends StatelessWidget {
               text: 'Sing in with Google',
               textColor: Colors.black87,
               color: Colors.white,
-              onPressed: _signInWithGoogle,
+              //     onPressed: _signInWithGoogle,
             ),
           ),
           SizedBox(
@@ -95,7 +124,7 @@ class SignInPage extends StatelessWidget {
               text: 'Sing in with Facebook',
               textColor: Colors.white,
               color: Color(0xFF334D92),
-              onPressed: _signInWithFacebook,
+              //     onPressed: _signInWithFacebook,
             ),
           ),
           SizedBox(
@@ -117,7 +146,7 @@ class SignInPage extends StatelessWidget {
               children: [
                 Text("Avez-vous un compte ?"),
                 TextButton(
-                    onPressed: () => _register(context),
+                    //    onPressed: () => _register(context),
                     child: Text("Register"))
               ],
             ),

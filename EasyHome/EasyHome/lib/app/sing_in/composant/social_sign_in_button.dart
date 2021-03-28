@@ -7,7 +7,8 @@ class SocialSingInButton extends CustomRaisedButton {
       String text,
       Color color,
       Color textColor,
-      VoidCallback onPressed})
+      //VoidCallback onPressed
+      })
       : super(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,5 +25,6 @@ class SocialSingInButton extends CustomRaisedButton {
               ],
             ),
             color: color,
-            onPressed: onPressed);
+            //onPressed: onPressed
+            );
 }

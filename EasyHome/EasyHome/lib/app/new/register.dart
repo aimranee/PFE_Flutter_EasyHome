@@ -1,22 +1,11 @@
 import 'package:easyhome/app/services/auth.dart';
-import 'package:easyhome/app/sing_in/composant/email_sign_up_form.dart';
 import 'package:easyhome/app/sing_in/composant/loading.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class EmailSignInForm extends StatelessWidget {
-  Auth auth = Auth();
-  String email, passWord;
+class Register extends StatelessWidget {
+  AuthServices auth = AuthServices();
+  String email, passWord, userName, phone;
   final keys = GlobalKey<FormState>();
-
-  void _register(BuildContext context) {
-    Navigator.of(context).push(
-      // navigation in flutter
-      MaterialPageRoute<void>(
-        builder: (context) => EmailSignUpPage(),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,23 +13,33 @@ class EmailSignInForm extends StatelessWidget {
         body: Center(
       child: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all((20)),
+          padding: EdgeInsets.all((15)),
           child: Form(
               key: keys,
               child: Column(
                 children: [
                   Text(
-                    "Sign In",
+                    "Sign Up",
                     style: TextStyle(fontSize: 20),
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   TextFormField(
+                      keyboardType: TextInputType.text,
+                      onChanged: (e) => userName = e,
+                      validator: (e) => e.isEmpty ? "champ vide" : null,
+                      decoration: InputDecoration(labelText: "UserName")),
+                  TextFormField(
+                      keyboardType: TextInputType.emailAddress,
                       onChanged: (e) => email = e,
                       validator: (e) => e.isEmpty ? "champ vide" : null,
-                      decoration: InputDecoration(
-                          hintText: "Entrer votre email", labelText: "Email")),
+                      decoration: InputDecoration(labelText: "Email")),
+                  TextFormField(
+                      keyboardType: TextInputType.phone,
+                      onChanged: (e) => phone = e,
+                      validator: (e) => e.isEmpty ? "champ vide" : null,
+                      decoration: InputDecoration(labelText: "Phone")),
                   TextFormField(
                     obscureText: true,
                     onChanged: (e) => passWord = e,
@@ -49,9 +48,7 @@ class EmailSignInForm extends StatelessWidget {
                         : e.length < 6
                             ? "le password doit etre plus de 6"
                             : null,
-                    decoration: InputDecoration(
-                        hintText: "Entrer votre PassWord",
-                        labelText: "PassWord"),
+                    decoration: InputDecoration(labelText: "PassWord"),
                   ),
                   SizedBox(
                     height: 20,
@@ -60,26 +57,15 @@ class EmailSignInForm extends StatelessWidget {
                       onPressed: () async {
                         if (keys.currentState.validate()) {
                           loading(context);
-                          bool login = await auth.signIn(email, passWord);
-                          if (login != null) {
+                          bool register = await auth.signUp(
+                              email, passWord, userName, phone);
+                          if (register != null) {
                             Navigator.of(context).pop();
-                            if (!login) print("incorrect");
+                            if (register) Navigator.of(context).pop();
                           }
                         }
                       },
-                      child: Text("Sign In")),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Avez-vous un compte ?"),
-                        TextButton(
-                            onPressed: () => _register(context),
-                            child: Text("Register"))
-                      ],
-                    ),
-                  ),
+                      child: Text("Sign Up"))
                 ],
               )),
         ),

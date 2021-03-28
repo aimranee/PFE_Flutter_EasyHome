@@ -4,21 +4,25 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-abstract class AuthBase {
-  Future<User> signInWithGoogle();
-  Future<User> signInWithFacebook();
-  Future<void> signOut();
-}
+class AuthServices {
+  FirebaseAuth auth = FirebaseAuth.instance;
 
-class Auth implements AuthBase {
-  final _firebaseAuth = FirebaseAuth.instance;
+  Future signinAnonimous() async {
+    try {
+      final result = await auth.signInAnonymously();
+      return result.user;
+    } catch (e) {
+      return null;
+    }
+  }
 
   Future<User> get user async {
     final user = FirebaseAuth.instance.currentUser;
     return user;
   }
 
-  Future<bool> signUp(String email, String password, String userName, String phone) async {
+  Future<bool> signUp(
+      String email, String password, String userName, String phone) async {
     try {
       final result = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
@@ -28,7 +32,53 @@ class Auth implements AuthBase {
           email: email,
           userName: userName,
           phone: phone,
+        ));
+      }
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 
+  Future<bool> signIn(String email, String password) async {
+    try {
+      final result = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      if (result.user != null) return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  Future signOut() async {
+    try {
+      return auth.signOut();
+    } catch (e) {
+      return null;
+    }
+  }
+}
+
+/*
+class Auth {
+  final _firebaseAuth = FirebaseAuth.instance;
+
+  Future<User> get user async {
+    final user = FirebaseAuth.instance.currentUser;
+    return user;
+  }
+
+  Future<bool> signUp(
+      String email, String password, String userName, String phone) async {
+    try {
+      final result = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password);
+      if (result.user != null) {
+        await DBServices().saveUser(UserM(
+          id: result.user.uid,
+          email: email,
+          userName: userName,
+          phone: phone,
         ));
         return true;
       }
@@ -110,10 +160,16 @@ class Auth implements AuthBase {
 
   @override
   Future<void> signOut() async {
-    final googleSignIn = GoogleSignIn();
-    await googleSignIn.signOut();
-    final facebookLogin = FacebookLogin();
-    await facebookLogin.logOut();
-    await _firebaseAuth.signOut();
+    try {
+      final googleSignIn = GoogleSignIn();
+      await googleSignIn.signOut();
+      final facebookLogin = FacebookLogin();
+      await facebookLogin.logOut();
+      await _firebaseAuth.signOut();
+      //return auth.signOut();
+    } catch (e) {
+      return null;
+    }
   }
 }
+*/

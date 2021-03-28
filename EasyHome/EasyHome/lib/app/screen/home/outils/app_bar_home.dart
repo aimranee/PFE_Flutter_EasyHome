@@ -1,21 +1,8 @@
+import 'package:easyhome/app/screen/class/model/user.dart';
+import 'package:easyhome/app/services/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 AppBar buildAppBar(BuildContext context) {
-  return AppBar(
-    backgroundColor: Colors.white,
-    elevation: 2,
-    title: RichText(
-      text: TextSpan(
-          style: Theme.of(context)
-              .textTheme
-              .title
-              .copyWith(fontWeight: FontWeight.bold),
-          children: [
-            TextSpan(
-                text: "             ", style: TextStyle(color: Colors.white)),
-            TextSpan(text: "Easy", style: TextStyle(color: Colors.grey)),
-            TextSpan(text: "Home", style: TextStyle(color: Colors.lightBlue)),
-          ]),
-    ),
-  );
+  
 }

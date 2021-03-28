@@ -16,22 +16,51 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  UserM userM;
-  Auth auth = Auth();
+  User user;
+  AuthServices auth = AuthServices();
 
   Future<void> getUser() async {
-    User user = await auth.user;
+    // User user = await auth.user;
     final userResult = await DBServices().getUser(user.uid);
     setState(() {
-      userM = userResult;
+      user = userResult;
+      UserM.current = userResult;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    getUser();
     return Scaffold(
       drawer: MenuBar(),
-      appBar: buildAppBar(context),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 2,
+        title: RichText(
+          text: TextSpan(
+              style: Theme.of(context)
+                  .textTheme
+                  .title
+                  .copyWith(fontWeight: FontWeight.bold),
+              children: [
+                TextSpan(text: "Easy", style: TextStyle(color: Colors.grey)),
+                TextSpan(
+                    text: "Home", style: TextStyle(color: Colors.lightBlue)),
+              ]),
+        ),
+        centerTitle: true,
+        actions: [
+          IconButton(
+              icon: Icon(
+                Icons.logout,
+                color: Colors.grey,
+              ),
+              onPressed: () async {
+                await auth.signOut();
+                setState(() {});
+              })
+        ],
+      ),
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [

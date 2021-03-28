@@ -5,8 +5,9 @@ import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key, @required this.auth, @required this.onSignOut}) : super(key: key);
-  final AuthBase auth;
+  const HomePage({Key key, /*@required this.auth,*/ @required this.onSignOut})
+      : super(key: key);
+  //final Auth auth;
   final VoidCallback onSignOut;
 
   Future<void> _signOut() async {
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
       await googleSignIn.signOut();
       final facebookSignIn = FacebookLogin();
       await facebookSignIn.logOut();
-      await auth.signOut;
+   //   await auth.signOut;
       onSignOut();
     } catch (e) {
       print(e.toString());
