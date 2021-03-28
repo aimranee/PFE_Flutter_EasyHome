@@ -1,4 +1,4 @@
-import 'package:carousel_pro/carousel_pro.dart';
+/*import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 
 class CarouselImages extends StatefulWidget {
@@ -17,31 +17,15 @@ class _CarouselImagesState extends State<CarouselImages> {
 
     return Container(
       height: size.height * 0.35,
-      child: Carousel(
+      children:[ CachedNetworkImage(imageUrl : imgs[i]),
+
         dotSize: 5,
         dotBgColor: Colors.transparent,
-        autoplay: false,
+        autoplay: true,
         images: [
-          AssetImage(
-            widget.listImages[0],
-          ),
-          AssetImage(
-            widget.listImages[1],
-          ),
-          AssetImage(
-            widget.listImages[2],
-          ),
-          AssetImage(
-            widget.listImages[3],
-          ),
-          AssetImage(
-            widget.listImages[4],
-          ),
-          AssetImage(
-            widget.listImages[5],
-          ),
         ],
       ),
     );
   }
 }
+*/

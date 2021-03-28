@@ -7,6 +7,7 @@ import 'package:easyhome/app/services/db.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -15,21 +16,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  UserM userM;
   AuthServices auth = AuthServices();
-
-  Future<void> getUser() async {
-    User user = await auth.user;
-    final userResult = await DBServices().getUser(user.uid);
-    setState(() {
-      userM = userResult;
-      UserM.current = userResult;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    getUser();
+    final userM = Provider.of<UserM>(context);
     return Scaffold(
       drawer: MenuBar(),
       appBar: AppBar(
@@ -55,8 +46,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.grey,
               ),
               onPressed: () async {
-                await auth.signOut();
-                setState(() {});
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text("Deconnexion"),
+                        content: Text("Voulez-vous vous déconnecter?"),
+                        actions: [
+                          TextButton(
+                            onPressed: () async {
+                              await auth.signOut();
+                              setState(() {});
+                            },
+                            child: Text("Oui"),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text("Non"),
+                          ),
+                        ],
+                      );
+                    });
               })
         ],
       ),

@@ -1,5 +1,7 @@
 import 'package:easyhome/app/screen/class/model/user.dart';
+import 'package:easyhome/app/screen/home/outils/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MenuBar extends StatefulWidget {
   @override
@@ -9,7 +11,7 @@ class MenuBar extends StatefulWidget {
 class _MenuBarState extends State<MenuBar> {
   @override
   Widget build(BuildContext context) {
-    final user = UserM.current;
+    final user = Provider.of<UserM>(context);
     return Container(
         color: Colors.white,
         width: 250,
@@ -35,7 +37,10 @@ class _MenuBarState extends State<MenuBar> {
                         color: Colors.lightBlue,
                       ),
               ),
-            )
+            ),
+            /*Container(
+                child: ElevatedButton(
+                    child: Text("Profile"), onPressed: () => ProfilePage()))*/
           ],
         ));
   }

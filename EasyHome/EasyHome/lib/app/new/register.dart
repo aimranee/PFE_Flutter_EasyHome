@@ -1,5 +1,5 @@
+import 'package:easyhome/app/new/composant/loading.dart';
 import 'package:easyhome/app/services/auth.dart';
-import 'package:easyhome/app/sing_in/composant/loading.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatelessWidget {

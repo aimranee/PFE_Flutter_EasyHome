@@ -1,4 +1,4 @@
-import 'package:easyhome/app/services/auth.dart';
+/*import 'package:easyhome/app/services/auth.dart';
 import 'package:easyhome/app/sing_in/composant/background.dart';
 import 'package:easyhome/app/sing_in/composant/sign_in_button.dart';
 import 'package:easyhome/app/sing_in/composant/social_sign_in_button.dart';
@@ -156,3 +156,4 @@ class SignInPage extends StatelessWidget {
     );
   }
 }
+*/

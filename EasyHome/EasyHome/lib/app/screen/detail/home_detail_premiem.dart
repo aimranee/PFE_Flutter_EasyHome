@@ -66,7 +66,7 @@ class _PagePremiemDetailsState extends State<PagePremiemDetails> {
             children: [
               Stack(
                 children: [
-                  CarouselImages(widget.annoncePremiem.ListPremiem),
+                //  CarouselImages(widget.annoncePremiem.ListPremiem),
                   AppBarDetails(),
                 ],
               ),

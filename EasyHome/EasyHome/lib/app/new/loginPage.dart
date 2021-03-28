@@ -1,8 +1,7 @@
 import 'package:easyhome/app/new/composant/email_sign_up_form.dart';
+import 'package:easyhome/app/new/composant/loading.dart';
 import 'package:easyhome/app/new/register.dart';
 import 'package:easyhome/app/services/auth.dart';
-import 'package:easyhome/app/sing_in/composant/loading.dart';
-import 'package:easyhome/app/sing_in/composant/sign_in_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

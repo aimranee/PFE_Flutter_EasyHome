@@ -1,9 +1,12 @@
 import 'package:easyhome/app/new/loginPage.dart';
+import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:easyhome/app/screen/home/Home_screen.dart';
 import 'package:easyhome/app/screen/home/outils/Homes.dart';
 import 'package:easyhome/app/services/auth.dart';
+import 'package:easyhome/app/services/db.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Statut extends StatefulWidget {
   @override
@@ -23,6 +26,12 @@ class _StatutState extends State<Statut> {
   @override
   Widget build(BuildContext context) {
     getUser();
-    return user == null ? LoginPage() : HomeScreen();
+    return user == null
+        ? LoginPage()
+        : StreamProvider<UserM>.value(
+            value: DBServices().getCurrentUser,
+            initialData: null,
+            child: HomeScreen(),
+          );
   }
 }

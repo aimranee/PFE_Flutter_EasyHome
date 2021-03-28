@@ -1,8 +1,7 @@
 import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:easyhome/app/services/db.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_login_facebook/flutter_login_facebook.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+
 
 class AuthServices {
   FirebaseAuth auth = FirebaseAuth.instance;
