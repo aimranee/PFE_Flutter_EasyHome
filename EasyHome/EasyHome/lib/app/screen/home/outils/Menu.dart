@@ -1,5 +1,5 @@
 import 'package:easyhome/app/screen/class/model/user.dart';
-import 'package:easyhome/app/screen/home/outils/profile.dart';
+import 'package:easyhome/app/screen/home/outils/add_annonce.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -38,9 +38,13 @@ class _MenuBarState extends State<MenuBar> {
                       ),
               ),
             ),
-            /*Container(
+            Container(
                 child: ElevatedButton(
-                    child: Text("Profile"), onPressed: () => ProfilePage()))*/
+                    child: Text("Add Annonce"),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => AddAnnonce()));
+                    }))
           ],
         ));
   }

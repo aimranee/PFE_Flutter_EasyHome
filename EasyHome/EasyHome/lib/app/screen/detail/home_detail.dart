@@ -36,11 +36,17 @@ class _PageDetailsState extends State<PageDetails> {
           Stack(
             children: [
               CarouselSlider.builder(
-                  itemCount: null,
-                  itemBuilder: null,
+                  itemCount: imgs.length,
+                  itemBuilder: (context, i, a) {
+                    return Container(
+                      child: Image(
+                        image: NetworkImage(imgs[i]),
+                      ),
+                    );
+                  },
                   options: CarouselOptions(
-                    height: 220,
-                    autoPlay: true,
+                    height: 240,
+                    autoPlay: false,
                     viewportFraction: 1,
                   )),
               AppBarDetails(),
