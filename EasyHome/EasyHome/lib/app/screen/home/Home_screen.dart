@@ -3,10 +3,8 @@ import 'package:easyhome/app/screen/home/outils/Homes.dart';
 import 'package:easyhome/app/screen/home/outils/Menu.dart';
 import 'package:easyhome/app/screen/home/outils/Premiem.dart';
 import 'package:easyhome/app/services/auth.dart';
-import 'package:easyhome/app/services/db.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {

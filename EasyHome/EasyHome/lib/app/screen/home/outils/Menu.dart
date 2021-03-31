@@ -1,5 +1,6 @@
 import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:easyhome/app/screen/home/outils/add_annonce.dart';
+import 'package:easyhome/app/screen/home/outils/add_annonce_premium.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -44,6 +45,14 @@ class _MenuBarState extends State<MenuBar> {
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => AddAnnonce()));
+                    })),
+            Container(
+                color: Colors.yellow[100],
+                child: ElevatedButton(
+                    child: Text("Add Annonce Premium"),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => AddAnnoncePremium()));
                     }))
           ],
         ));

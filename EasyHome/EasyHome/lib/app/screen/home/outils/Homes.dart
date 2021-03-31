@@ -1,5 +1,5 @@
-import 'package:easyhome/app/screen/class/annonce_parametre/annonce.dart';
 import 'package:easyhome/app/screen/class/data/data.dart';
+import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:easyhome/app/screen/detail/home_detail.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
                         height: 120,
                         width: size.width,
                         fit: BoxFit.cover,
-                        image: AssetImage(annonce.images),
+                        image: AssetImage(annonce.images[1]),
                       )),
                   Positioned(
                     right: 20.0 / 2,
@@ -85,7 +85,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     Text(
-                      '${annonce.price.toStringAsFixed(2)}\ DH',
+                      '${annonce.prix}\ DH',
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontSize: 15,

@@ -1,13 +1,18 @@
+import 'dart:io';
+import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:path/path.dart' as Path;
 
 class DBServices {
   final CollectionReference usercol =
       FirebaseFirestore.instance.collection("users");
   final CollectionReference carouselcol =
       FirebaseFirestore.instance.collection("carousel");
+  final CollectionReference annoncecol =
+      FirebaseFirestore.instance.collection("annonce");
 
   Future saveUser(UserM user) async {
     try {
@@ -38,6 +43,21 @@ class DBServices {
     }
   }
 
+  Future<String> uploadImage(File file, {String path}) async {
+    var time = DateTime.now().toString();
+    var ext = Path.basename(file.path).split(".")[1].toString();
+    String image = path + "_" + time + "." + ext;
+    try {
+      
+      Reference ref =
+          FirebaseStorage.instance.ref(path + "/" + image);
+      ref.putFile(file);
+      return await ref.getDownloadURL();
+    } catch (e) {
+      return null;
+    }
+  }
+
   Future<List> get getCarouselImage async {
     try {
       final data = await carouselcol.doc("i7WNCpDpp54RUfDj2ljF").get();
@@ -46,4 +66,21 @@ class DBServices {
       return null;
     }
   }
+
+  Future saveAnnonce(Annonce annonce) async {
+    try {
+      await annoncecol.doc().set(annonce.toMap());
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+    Stream<List<Annonce>> get getAnnonce {
+    return annoncecol.snapshots().map((annonce){
+      return annonce.docs
+          .map((e) => Annonce.fromJson(e.data(), id: e.id))
+          .toList();
+    });
+    }
 }

@@ -1,8 +1,8 @@
-import 'package:easyhome/app/screen/class/annonce_parametre/annoncePremiem.dart';
+import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:flutter/material.dart';
 
 class HomeDetailsPremiem extends StatefulWidget {
-  final AnnoncePremiem annoncePremiem;
+  final Annonce annoncePremiem;
 
   HomeDetailsPremiem(this.annoncePremiem);
 
@@ -43,7 +43,7 @@ class _HomeDetailsPremiemState extends State<HomeDetailsPremiem> {
                   ),
                 ),
                     Text(
-                      '\$${widget.annoncePremiem.price.toStringAsFixed(2)}',
+                      '\$${widget.annoncePremiem.prix}',
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
@@ -53,7 +53,7 @@ class _HomeDetailsPremiemState extends State<HomeDetailsPremiem> {
                       height: 5,
                     ),
                     Text(
-                      widget.annoncePremiem.address,
+                      widget.annoncePremiem.adresse,
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.black.withOpacity(0.4),
@@ -62,13 +62,7 @@ class _HomeDetailsPremiemState extends State<HomeDetailsPremiem> {
                     ),
                   ],
                 ),
-                Text(
-                  '${widget.annoncePremiem.time} hours ago',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                
               ],
             ),
           ),
@@ -104,13 +98,7 @@ class _HomeDetailsPremiemState extends State<HomeDetailsPremiem> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          widget.annoncePremiem.sqFeet.toString(),
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        
                         SizedBox(
                           height: 10,
                         ),

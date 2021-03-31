@@ -3,16 +3,15 @@ import 'dart:io';
 import 'package:easyhome/app/new/composant/loading.dart';
 import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:easyhome/app/services/db.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'get_image.dart';
 
-class AddAnnonce extends StatefulWidget {
+class AddAnnoncePremium extends StatefulWidget {
   @override
-  _AddAnnonceState createState() => _AddAnnonceState();
+  _AddAnnoncePremiumState createState() => _AddAnnoncePremiumState();
 }
 
-class _AddAnnonceState extends State<AddAnnonce> {
+class _AddAnnoncePremiumState extends State<AddAnnoncePremium> {
   final key = GlobalKey<FormState>();
   String titre, tele, nbrChambre, prix, adresse, description, nbrPersonne;
   Annonce annonce = Annonce();
@@ -20,7 +19,7 @@ class _AddAnnonceState extends State<AddAnnonce> {
   @override
   initState() {
     super.initState();
-    annonce.type = AnnonceType.annonce;
+    annonce.type = AnnonceType.annoncePrmiem;
   }
 
   Widget build(BuildContext context) {
@@ -110,8 +109,8 @@ class _AddAnnonceState extends State<AddAnnonce> {
                     validator: (e) => e.isEmpty ? "Remplire ce champ" : null,
                     onChanged: (e) => adresse = e,
                     decoration: InputDecoration(
-                      hintText: "Localisation",
-                      labelText: "Localisation",
+                      hintText: "Adresse",
+                      labelText: "Adresse",
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30)),
                     ),
@@ -193,8 +192,6 @@ class _AddAnnonceState extends State<AddAnnonce> {
                           onPressed: () async {
                             if (key.currentState.validate()) {
                               loading(context);
-                              annonce.uid =
-                                  FirebaseAuth.instance.currentUser.uid;
                               annonce.title = titre;
                               annonce.adresse = adresse;
                               annonce.tele = tele;

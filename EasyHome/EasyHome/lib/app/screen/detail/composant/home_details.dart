@@ -1,5 +1,4 @@
-import 'package:easyhome/app/screen/class/annonce_parametre/annonce.dart';
-import 'package:easyhome/app/screen/class/annonce_parametre/annoncePremiem.dart';
+import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:flutter/material.dart';
 
 class HomeDetails extends StatefulWidget {
@@ -64,7 +63,7 @@ class _HomeDetailsState extends State<HomeDetails> {
                       ),
                     ),
                     Text(
-                      '\$${widget.annonce.price.toStringAsFixed(2)}',
+                      '\$${widget.annonce.prix}',
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
@@ -74,7 +73,7 @@ class _HomeDetailsState extends State<HomeDetails> {
                       height: 5,
                     ),
                     Text(
-                      widget.annonce.address,
+                      widget.annonce.adresse,
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.black.withOpacity(0.4),
@@ -83,13 +82,13 @@ class _HomeDetailsState extends State<HomeDetails> {
                     ),
                   ],
                 ),
-                Text(
+                /*Text(
                   '${widget.annonce.time} hours ago',
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
-                ),
+                ),*/
               ],
             ),
           ),
@@ -125,13 +124,6 @@ class _HomeDetailsState extends State<HomeDetails> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          widget.annonce.sqFeet.toString(),
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
                         SizedBox(
                           height: 10,
                         ),

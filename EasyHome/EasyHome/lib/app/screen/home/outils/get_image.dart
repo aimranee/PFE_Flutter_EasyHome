@@ -40,8 +40,11 @@ class GetImage extends StatelessWidget {
                   icon: Icon(Icons.image),
                   onPressed: () async {
                     final result =
-                        await picker.getImage(source: ImageSource.gallery);
-                    Navigator.of(context).pop(File(result.path));
+                        await picker.getImage(source: ImageSource.camera);
+                    if (result != null)
+                      Navigator.of(context).pop(File(result.path));
+                    else
+                      Navigator.of(context).pop();
                   },
                 ),
               ),

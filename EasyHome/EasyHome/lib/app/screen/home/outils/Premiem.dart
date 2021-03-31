@@ -1,12 +1,12 @@
-import 'package:easyhome/app/screen/class/annonce_parametre/annoncePremiem.dart';
 import 'package:easyhome/app/screen/class/data/dataPremiem.dart';
+import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:easyhome/app/screen/detail/home_detail_premiem.dart';
 import 'package:flutter/material.dart';
 
 class PremiemList extends StatelessWidget {
   _buildStyles(BuildContext context, int index) {
     Size size = MediaQuery.of(context).size;
-    AnnoncePremiem annoncePremiem = listPremiem[index];
+    Annonce annoncePremiem = listPremiem[index];
 
     return GestureDetector(
         onTap: () {
@@ -31,7 +31,7 @@ class PremiemList extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image(
                     fit: BoxFit.cover,
-                    image: AssetImage(annoncePremiem.images),
+                    image: AssetImage(annoncePremiem.images[1]),
                   ),
                 ),
               ),
