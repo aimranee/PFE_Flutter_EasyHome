@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
                         height: 120,
                         width: size.width,
                         fit: BoxFit.cover,
-                        image: AssetImage(annonce.images[1]),
+                        image: AssetImage(annonce.images[0]),
                       )),
                   Positioned(
                     right: 20.0 / 2,
@@ -83,6 +83,9 @@ class _HomeState extends State<Home> {
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
+                    ),
+                    Container(
+                      height: 50,
                     ),
                     Text(
                       '${annonce.prix}\ DH',

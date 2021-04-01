@@ -31,7 +31,7 @@ class PremiemList extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image(
                     fit: BoxFit.cover,
-                    image: AssetImage(annoncePremiem.images[1]),
+                    image: AssetImage(annoncePremiem.images[0]),
                   ),
                 ),
               ),
