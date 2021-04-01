@@ -44,7 +44,7 @@ class _AddAnnoncePremiumState extends State<AddAnnoncePremium> {
                       hintText: "Titre de la annonce",
                       labelText: "Titre",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -57,7 +57,7 @@ class _AddAnnoncePremiumState extends State<AddAnnoncePremium> {
                       hintText: "Nombre des chambres",
                       labelText: "Chambres",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -71,7 +71,7 @@ class _AddAnnoncePremiumState extends State<AddAnnoncePremium> {
                       hintText: "Prix",
                       labelText: "Prix",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -85,7 +85,7 @@ class _AddAnnoncePremiumState extends State<AddAnnoncePremium> {
                       hintText: "nombre",
                       labelText: "nombre des personne",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -99,7 +99,7 @@ class _AddAnnoncePremiumState extends State<AddAnnoncePremium> {
                       hintText: "Téléphone",
                       labelText: "Téléphone",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -112,7 +112,7 @@ class _AddAnnoncePremiumState extends State<AddAnnoncePremium> {
                       hintText: "Adresse",
                       labelText: "Adresse",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -187,7 +187,7 @@ class _AddAnnoncePremiumState extends State<AddAnnoncePremium> {
                       width: MediaQuery.of(context).size.width,
                       child: FlatButton(
                           shape: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(30)),
                           color: Colors.lightBlue,
                           onPressed: () async {
                             if (key.currentState.validate()) {
@@ -217,7 +217,7 @@ class _AddAnnoncePremiumState extends State<AddAnnoncePremium> {
                             }
                           },
                           child: Text(
-                            "Annoncer",
+                            "Validé",
                             style: TextStyle(color: Colors.white),
                           )))
                 ],

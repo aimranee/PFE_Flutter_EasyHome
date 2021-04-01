@@ -9,6 +9,7 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
+  //bool darkThemeEnabled = false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      //darkTheme: darkThemeEnabled ? ThemeData.dark() : ThemeData.light(),
       home: Statut(),
     );
   }

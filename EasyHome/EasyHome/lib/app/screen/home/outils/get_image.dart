@@ -8,44 +8,56 @@ class GetImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
-      height: 100,
+      padding: EdgeInsets.all(15),
+      height: 150,
       child: Column(
         children: [
           Text(
-            "Photo de profil",
-            style: TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+            "Photos",
+            style: TextStyle(color: Colors.black, fontSize: 26),
           ),
           Container(
-            height: 10,
+            height: 20,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircleAvatar(
-                child: IconButton(
-                  icon: Icon(Icons.camera_alt),
-                  onPressed: () async {
-                    final result =
-                        await picker.getImage(source: ImageSource.camera);
-                    Navigator.of(context).pop(File(result.path));
-                  },
+              TextButton.icon(
+                icon: Icon(
+                  Icons.camera_alt_rounded,
+                  color: Colors.grey,
+                  size: 30,
+                ),
+                onPressed: () async {
+                  final result =
+                      await picker.getImage(source: ImageSource.camera);
+                  Navigator.of(context).pop(File(result.path));
+                },
+                label: Text(
+                  "Camera",
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
               ),
               Container(
-                width: 10,
+                width: 30,
               ),
-              CircleAvatar(
-                child: IconButton(
-                  icon: Icon(Icons.image),
-                  onPressed: () async {
-                    final result =
-                        await picker.getImage(source: ImageSource.camera);
-                    if (result != null)
-                      Navigator.of(context).pop(File(result.path));
-                    else
-                      Navigator.of(context).pop();
-                  },
+              TextButton.icon(
+                icon: Icon(
+                  Icons.image,
+                  color: Colors.grey,
+                  size: 30,
+                ),
+                onPressed: () async {
+                  final result =
+                      await picker.getImage(source: ImageSource.gallery);
+                  if (result != null)
+                    Navigator.of(context).pop(File(result.path));
+                  else
+                    Navigator.of(context).pop();
+                },
+                label: Text(
+                  "Gallery",
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
               ),
             ],

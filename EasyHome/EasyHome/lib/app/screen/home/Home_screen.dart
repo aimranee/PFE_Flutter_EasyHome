@@ -2,8 +2,6 @@ import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:easyhome/app/screen/home/outils/Homes.dart';
 import 'package:easyhome/app/screen/home/outils/Menu.dart';
 import 'package:easyhome/app/screen/home/outils/Premiem.dart';
-import 'package:easyhome/app/services/auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,8 +12,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  AuthServices auth = AuthServices();
-
   @override
   Widget build(BuildContext context) {
     final userM = Provider.of<UserM>(context);
@@ -37,38 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ]),
         ),
         centerTitle: true,
-        actions: [
-          IconButton(
-              icon: Icon(
-                Icons.logout,
-                color: Colors.grey,
-              ),
-              onPressed: () async {
-                showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: Text("Deconnexion"),
-                        content: Text("Voulez-vous vous déconnecter?"),
-                        actions: [
-                          TextButton(
-                            onPressed: () async {
-                              await auth.signOut();
-                              setState(() {});
-                            },
-                            child: Text("Oui"),
-                          ),
-                          TextButton(
-                            onPressed: () async {
-                              Navigator.of(context).pop();
-                            },
-                            child: Text("Non"),
-                          ),
-                        ],
-                      );
-                    });
-              })
-        ],
       ),
       body: Stack(
         alignment: Alignment.bottomCenter,
