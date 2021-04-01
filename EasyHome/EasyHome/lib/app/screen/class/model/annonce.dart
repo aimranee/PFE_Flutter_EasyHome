@@ -36,7 +36,7 @@ class Annonce {
       title: map["title"],
       uid: map["uid"],
       images: map["images"].map<String>((i) => i as String).toList(),
-      type: map["type"] == "car"
+      type: map["type"] == "annonce"
           ? AnnonceType.annonce
           : AnnonceType.annoncePrmiem);
 

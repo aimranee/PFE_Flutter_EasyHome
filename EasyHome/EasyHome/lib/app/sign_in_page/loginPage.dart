@@ -1,7 +1,7 @@
 import 'package:easyhome/app/services/auth.dart';
-import 'package:easyhome/app/signe_in_page/composant/background.dart';
-import 'package:easyhome/app/signe_in_page/composant/email_sign_up_form.dart';
-import 'package:easyhome/app/signe_in_page/composant/loading.dart';
+import 'package:easyhome/app/sign_in_page/composant/background.dart';
+import 'package:easyhome/app/sign_in_page/composant/email_sign_up_form.dart';
+import 'package:easyhome/app/sign_in_page/composant/loading.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:easyhome/app/services/db.dart';
-import 'package:easyhome/app/signe_in_page/composant/loading.dart';
+import 'package:easyhome/app/sign_in_page/composant/loading.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'get_image.dart';

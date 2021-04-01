@@ -102,8 +102,10 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.all(8),
                   child: Row(
                     children: [
+                      Icon(Icons.location_pin),
+                      SizedBox(width: 10),
                       Text(
-                        '${annonce.description}',
+                        '${annonce.adresse}',
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                             fontSize: 15, color: Colors.black.withOpacity(0.4)),

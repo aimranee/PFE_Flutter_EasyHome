@@ -66,16 +66,6 @@ class _MenuBarState extends State<MenuBar> {
               title: Text('Profile'),
               onTap: () => ProfilePage(),
             ),
-            ListTile(
-              leading: Icon(Icons.question_answer_outlined),
-              title: Text('Contact us'),
-              onTap: () => null,
-            ),
-            ListTile(
-              leading: Icon(Icons.favorite),
-              title: Text('Favorites'),
-              onTap: () => null,
-            ),
             Divider(),
             SizedBox(
               height: 200,

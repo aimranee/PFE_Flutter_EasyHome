@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'app/signe_in_page/statutAuth.dart';
+import 'app/sign_in_page/statutAuth.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
