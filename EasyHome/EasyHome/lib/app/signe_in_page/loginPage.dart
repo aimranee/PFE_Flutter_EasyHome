@@ -1,8 +1,7 @@
-import 'package:easyhome/app/new/composant/email_sign_up_form.dart';
-import 'package:easyhome/app/new/composant/loading.dart';
-import 'package:easyhome/app/new/register.dart';
 import 'package:easyhome/app/services/auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:easyhome/app/signe_in_page/composant/background.dart';
+import 'package:easyhome/app/signe_in_page/composant/email_sign_up_form.dart';
+import 'package:easyhome/app/signe_in_page/composant/loading.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -28,10 +27,23 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("login"),
+          backgroundColor: Colors.white,
+          elevation: 5,
+          title: RichText(
+            text: TextSpan(
+                style: Theme.of(context)
+                    .textTheme
+                    .title
+                    .copyWith(fontWeight: FontWeight.bold),
+                children: [
+                  TextSpan(text: "Easy", style: TextStyle(color: Colors.grey)),
+                  TextSpan(
+                      text: "Home", style: TextStyle(color: Colors.lightBlue)),
+                ]),
+          ),
           centerTitle: true,
         ),
-        body: Center(
+        body: Background(
           child: SingleChildScrollView(
             child: Container(
               padding: EdgeInsets.all((20)),
@@ -39,10 +51,6 @@ class _LoginPageState extends State<LoginPage> {
                   key: keys,
                   child: Column(
                     children: [
-                      Text(
-                        "Sign In",
-                        style: TextStyle(fontSize: 20),
-                      ),
                       SizedBox(
                         height: 20,
                       ),

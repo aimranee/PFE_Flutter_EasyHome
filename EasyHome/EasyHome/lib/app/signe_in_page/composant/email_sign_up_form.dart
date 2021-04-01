@@ -1,4 +1,4 @@
-import 'package:easyhome/app/new/register.dart';
+import 'package:easyhome/app/signe_in_page/register.dart';
 import 'package:flutter/material.dart';
 
 class EmailSignUpPage extends StatelessWidget {

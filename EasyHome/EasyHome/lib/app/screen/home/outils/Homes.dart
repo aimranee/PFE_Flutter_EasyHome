@@ -85,14 +85,14 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     Container(
-                      height: 50,
+                      //height: 10,
+                      width: 126,
                     ),
                     Text(
                       '${annonce.prix}\ DH',
-                      textAlign: TextAlign.left,
+                      textAlign: TextAlign.right,
                       style: TextStyle(
                         fontSize: 15,
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
                   child: Row(
                     children: [
                       Text(
-                        '${annonce.title}',
+                        '${annonce.description}',
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                             fontSize: 15, color: Colors.black.withOpacity(0.4)),

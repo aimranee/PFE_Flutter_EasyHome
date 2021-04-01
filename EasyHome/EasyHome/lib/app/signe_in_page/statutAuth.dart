@@ -1,9 +1,8 @@
-import 'package:easyhome/app/new/loginPage.dart';
 import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:easyhome/app/screen/home/Home_screen.dart';
-import 'package:easyhome/app/screen/home/outils/Homes.dart';
 import 'package:easyhome/app/services/auth.dart';
 import 'package:easyhome/app/services/db.dart';
+import 'package:easyhome/app/signe_in_page/loginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

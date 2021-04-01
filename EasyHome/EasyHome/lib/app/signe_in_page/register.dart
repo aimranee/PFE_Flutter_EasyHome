@@ -1,5 +1,6 @@
-import 'package:easyhome/app/new/composant/loading.dart';
 import 'package:easyhome/app/services/auth.dart';
+import 'package:easyhome/app/signe_in_page/composant/background.dart';
+import 'package:easyhome/app/signe_in_page/composant/loading.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatelessWidget {
@@ -10,7 +11,7 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
+        body: Background(
       child: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all((15)),
@@ -18,10 +19,6 @@ class Register extends StatelessWidget {
               key: keys,
               child: Column(
                 children: [
-                  Text(
-                    "Sign Up",
-                    style: TextStyle(fontSize: 20),
-                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -61,8 +58,7 @@ class Register extends StatelessWidget {
                               email, passWord, userName, phone);
                           if (register != null) {
                             Navigator.of(context).pop();
-                          if (register) 
-                          Navigator.of(context).pop();
+                            if (register) Navigator.of(context).pop();
                           }
                         }
                       },

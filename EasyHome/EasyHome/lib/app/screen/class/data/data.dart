@@ -3,7 +3,7 @@ import 'package:easyhome/app/screen/class/model/annonce.dart';
 final _annonce1 = Annonce(
   title: "this home is good",
   adresse: 'Elghawa, Saad Allah Hined',
-  description: 'daar kbira 2éme etage o mchemcha 3 chambre ...',
+  description: 'daar kbira 2éme etage 3 chambre ...',
   prix: "2000.00",
   rooms: "3",
   limitPersonne: "3",
@@ -21,8 +21,7 @@ final _annonce1 = Annonce(
 final _annonce2 = Annonce(
   title: "this home is good",
   adresse: 'Elghawa, Saad Allah Hined',
-  description:
-      'daar kbira 1ére etage o mchemcha 3 chambre lmhm ikoon khiir incha llah...',
+  description: 'daar kbira 1ére etage 3 chambre ..',
   prix: "1900.00",
   rooms: "3",
   limitPersonne: "3",
@@ -40,7 +39,7 @@ final _annonce2 = Annonce(
 final _annonce3 = Annonce(
   title: "this home is good",
   adresse: 'Elghawa, Saad Allah Hined',
-  description: 'daar kbira 3éme etage o mchemcha 2 chambre ...',
+  description: 'daar kbira 3éme etage o mchemcha ...',
   prix: "1000.00",
   rooms: "2",
   limitPersonne: "3",

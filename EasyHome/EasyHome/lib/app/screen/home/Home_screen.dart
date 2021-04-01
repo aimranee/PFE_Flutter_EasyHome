@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final userM = Provider.of<UserM>(context);
+  //  final userM = Provider.of<UserM>(context);
     return Scaffold(
       drawer: MenuBar(),
       appBar: AppBar(
