@@ -26,12 +26,13 @@ class Annonce {
     this.isFav,
     this.type,
   });
-  factory Annonce.fromJson(Map<String, dynamic> map, {String id}) => Annonce(
-      id: id,
+  factory Annonce.fromJson(Map<String, dynamic> map) => Annonce(
+      //id: id,
       adresse: map["adresse"],
       description: map["description"],
       prix: map["prix"],
       limitPersonne: map["limitPersonne"],
+      rooms: map["rooms"],
       tele: map["tele"],
       title: map["title"],
       uid: map["uid"],

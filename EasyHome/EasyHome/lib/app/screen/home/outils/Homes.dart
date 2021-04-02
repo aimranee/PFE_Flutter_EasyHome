@@ -1,7 +1,10 @@
 import 'package:easyhome/app/screen/class/data/data.dart';
 import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:easyhome/app/screen/detail/home_detail.dart';
+import 'package:easyhome/app/screen/home/outils/list.dart';
+import 'package:easyhome/app/services/db.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,6 +22,11 @@ class _HomeState extends State<Home> {
           context,
           MaterialPageRoute(
             builder: (_) => PageDetails(annonce: annonce),
+            /*builder: (context) => StreamProvider<List<Annonce>>.value(
+                    initialData: [],
+                    value: DBServices().getAnnonce,
+                    child: MotoList(),
+                  )*/
           ),
         );
       },

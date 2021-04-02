@@ -13,28 +13,47 @@ AuthServices auth = AuthServices();
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
+    //final user = Provider.of<UserM>(context);
     final user = Provider.of<UserM>(context);
-    return Scaffold(
-      body: UserAccountsDrawerHeader(
-        accountName: Text(
-          user.userName ?? "aucun",
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
-        accountEmail: Text(
-          user.email ?? "Aucun",
-          style: TextStyle(color: Colors.white, fontSize: 15),
-        ),
-        currentAccountPicture: CircleAvatar(
-          backgroundColor: Colors.white,
-          backgroundImage: user.image != null ? NetworkImage(user.image) : null,
-          child: user.image != null
-              ? Container()
-              : Icon(
-                  Icons.person,
-                  color: Colors.lightBlue,
-                ),
-        ),
-      ),
-    );
+    return Container(
+        color: Colors.white,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text(
+                user.userName ?? "aucun",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              accountEmail: Text(
+                user.email ?? "Aucun",
+                style: TextStyle(color: Colors.white, fontSize: 15),
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.white,
+                backgroundImage:
+                    user.image != null ? NetworkImage(user.image) : null,
+                child: user.image != null
+                    ? Container()
+                    : Icon(
+                        Icons.person,
+                        color: Colors.lightBlue,
+                      ),
+              ),
+            ),
+            Divider(),
+            ListTile(
+                leading: Icon(Icons.person_outline_outlined),
+                title: Text('Profile'),
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => ProfilePage()));
+                }),
+            Divider(),
+            SizedBox(
+              height: 200,
+            ),
+          ],
+        ));
   }
 }

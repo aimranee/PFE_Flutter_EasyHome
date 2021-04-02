@@ -124,36 +124,6 @@ class _HomeDetailsState extends State<HomeDetails> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'Square foot',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 20,
-                    bottom: 20,
-                  ),
-                  child: Container(
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                          color: Colors.black.withOpacity(0.4),
-                        )),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
                         Text(
                           widget.annonce.rooms.toString(),
                           style: TextStyle(
@@ -228,7 +198,7 @@ class _HomeDetailsState extends State<HomeDetails> {
                 height: 1.5,
               ),
             ),
-          )
+          ),
         ],
       ),
     );

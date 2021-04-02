@@ -1,7 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easyhome/app/screen/class/model/annonce.dart';
-import 'package:easyhome/app/screen/detail/composant/app_bar.dart';
-
 import 'package:easyhome/app/screen/detail/composant/home_details.dart';
 import 'package:easyhome/app/services/db.dart';
 import 'package:flutter/material.dart';
@@ -28,31 +26,41 @@ class _PageDetailsState extends State<PageDetails> {
   Widget build(BuildContext context) {
     getCarouselImage;
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          title: Text(
+            "Home Details",
+            style: TextStyle(color: Colors.grey),
+          ),
+        ),
         body: Stack(alignment: Alignment.bottomCenter, children: [
-      Column(
-        children: [
-          Stack(
+          Column(
             children: [
-              CarouselSlider.builder(
-                  itemCount: imgs.length,
-                  itemBuilder: (context, i, a) {
-                    return Container(
-                      child: Image(
-                        image: NetworkImage(imgs[i]),
-                      ),
-                    );
-                  },
-                  options: CarouselOptions(
-                    height: 240,
-                    autoPlay: false,
-                    viewportFraction: 1,
-                  )),
-              AppBarDetails(),
+              Stack(
+                children: [
+                  CarouselSlider.builder(
+                      itemCount: imgs.length,
+                      itemBuilder: (context, i, a) {
+                        return Container(
+                          child: Image(
+                            image: NetworkImage(imgs[i]),
+                          ),
+                        );
+                      },
+                      options: CarouselOptions(
+                        height: 240,
+                        autoPlay: false,
+                        viewportFraction: 1,
+                      )),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              HomeDetails(widget.annonce),
             ],
           ),
-          HomeDetails(widget.annonce),
-        ],
-      ),
-    ]));
+        ]));
   }
 }

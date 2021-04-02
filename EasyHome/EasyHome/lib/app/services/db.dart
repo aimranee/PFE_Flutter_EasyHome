@@ -48,9 +48,7 @@ class DBServices {
     var ext = Path.basename(file.path).split(".")[1].toString();
     String image = path + "_" + time + "." + ext;
     try {
-      
-      Reference ref =
-          FirebaseStorage.instance.ref(path + "/" + image);
+      Reference ref = FirebaseStorage.instance.ref(path + "/" + image);
       ref.putFile(file);
       return await ref.getDownloadURL();
     } catch (e) {
@@ -76,11 +74,9 @@ class DBServices {
     }
   }
 
-    Stream<List<Annonce>> get getAnnonce {
-    return annoncecol.snapshots().map((annonce){
-      return annonce.docs
-          .map((e) => Annonce.fromJson(e.data(), id: e.id))
-          .toList();
+  Stream<List<Annonce>> get getAnnonce {
+    return annoncecol.snapshots().map((annonce) {
+      return annonce.docs.map((e) => Annonce.fromJson(e.data())).toList();
     });
-    }
+  }
 }

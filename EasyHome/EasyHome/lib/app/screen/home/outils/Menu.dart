@@ -62,13 +62,16 @@ class _MenuBarState extends State<MenuBar> {
                 }),
             Divider(),
             ListTile(
-              leading: Icon(Icons.person_outline_outlined),
-              title: Text('Profile'),
-              onTap: () => ProfilePage(),
-            ),
+                leading: Icon(Icons.person_outline_outlined),
+                title: Text('Profile'),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ProfilePage(),
+                  ));
+                }),
             Divider(),
             SizedBox(
-              height: 200,
+              height: 260,
             ),
             ListTile(
               leading: Icon(

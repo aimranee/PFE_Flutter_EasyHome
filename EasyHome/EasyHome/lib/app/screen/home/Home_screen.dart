@@ -2,7 +2,10 @@ import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:easyhome/app/screen/home/outils/Homes.dart';
 import 'package:easyhome/app/screen/home/outils/Menu.dart';
 import 'package:easyhome/app/screen/home/outils/Premiem.dart';
+import 'package:easyhome/app/screen/home/outils/add_annonce.dart';
+import 'package:easyhome/app/screen/home/outils/add_annonce_premium.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,6 +15,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int value = 0;
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,22 +48,13 @@ class _HomeScreenState extends State<HomeScreen> {
           Column(
             children: [
               PremiemList(),
+              Divider(),
               Home(),
             ],
           ),
         ],
       ),
-    );
-  }
-}
-
-/*int value = 0;
-  @override
-  void initState() {
-    super.initState();
-  }*/
-
-/*floatingActionButton: SpeedDial(
+      floatingActionButton: SpeedDial(
         curve: Curves.bounceInOut,
         animatedIcon: AnimatedIcons.menu_close,
         backgroundColor: Colors.lightBlue,
@@ -63,25 +63,31 @@ class _HomeScreenState extends State<HomeScreen> {
         shape: CircleBorder(),
         children: [
           SpeedDialChild(
-              child: Icon(
-                Icons.account_circle,
-                color: Colors.white,
-              ),
-              backgroundColor: Colors.amber,
-              label: 'Profile'),
+            child: Icon(
+              Icons.add_a_photo_outlined,
+              color: Colors.white,
+            ),
+            backgroundColor: Colors.cyan,
+            label: 'Add annonce',
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => AddAnnonce()));
+            },
+          ),
           SpeedDialChild(
-              child: Icon(
-                Icons.home_rounded,
-                color: Colors.white,
-              ),
-              backgroundColor: Colors.cyan,
-              label: 'Home'),
-          SpeedDialChild(
-              child: Icon(
-                Icons.map_outlined,
-                color: Colors.white,
-              ),
-              backgroundColor: Colors.red,
-              label: 'Map View'),
+            child: Icon(
+              Icons.add_a_photo_rounded,
+              color: Colors.white,
+            ),
+            backgroundColor: Colors.amber,
+            label: 'Add annonce premium',
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => AddAnnoncePremium()));
+            },
+          ),
         ],
-      ),*/
+      ),
+    );
+  }
+}
