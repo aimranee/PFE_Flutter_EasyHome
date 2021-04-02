@@ -1,4 +1,4 @@
-import 'package:easyhome/app/screen/class/model/annonce.dart';
+/*import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:easyhome/app/screen/home/outils/add_annonce.dart';
 import 'package:easyhome/app/services/db.dart';
 import 'package:flutter/material.dart';
@@ -41,3 +41,4 @@ class _MotoListState extends State<MotoList> {
     );
   }
 }
+*/

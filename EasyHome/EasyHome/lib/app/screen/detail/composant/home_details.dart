@@ -82,14 +82,17 @@ class _HomeDetailsState extends State<HomeDetails> {
                     ),
                   ],
                 ),
-                /*Text(
-                  '${widget.annonce.time} hours ago',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),*/
               ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, bottom: 20),
+            child: Text(
+              "Telephone : ${widget.annonce.tele}",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           Padding(

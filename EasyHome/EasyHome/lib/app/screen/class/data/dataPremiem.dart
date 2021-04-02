@@ -5,7 +5,8 @@ final _annonce1 = Annonce(
   description: 'daar kbira 2éme etage o mchemcha 3 chambre ...',
   prix: "2000.00",
   rooms: "3",
-  limitPersonne: "3",
+  limitPersonne: "3",tele: '0635241568',
+
   isFav: false,
   images: [
     'assets/images/house1.jpeg',
@@ -21,7 +22,7 @@ final _annonce2 = Annonce(
   description: 'daar kbira 2éme etage o mchemcha 3 chambre ...',
   prix: "2000.00",
   rooms: "3",
-  limitPersonne: "3",
+  limitPersonne: "3",tele: '0645869654',
   isFav: false,
   images: [
     'assets/images/house1.jpeg',
@@ -38,6 +39,7 @@ final _annonce3 = Annonce(
   prix: "2000.00",
   rooms: "3",
   limitPersonne: "3",
+  tele: '0612345678',
   isFav: false,
   images: [
     'assets/images/house1.jpeg',
@@ -54,6 +56,7 @@ final _annonce4 = Annonce(
   prix: "2000.00",
   rooms: "3",
   limitPersonne: "3",
+  tele: '0612345678',
   isFav: false,
   images: [
     'assets/images/house1.jpeg',
@@ -70,6 +73,7 @@ final _annonce5 = Annonce(
   prix: "2000.00",
   rooms: "3",
   limitPersonne: "3",
+  tele: '0612345678',
   isFav: false,
   images: [
     'assets/images/house1.jpeg',

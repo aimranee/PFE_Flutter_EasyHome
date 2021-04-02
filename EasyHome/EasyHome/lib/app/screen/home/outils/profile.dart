@@ -1,4 +1,4 @@
-import 'package:easyhome/app/screen/class/model/user.dart';
+/*import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:easyhome/app/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -57,3 +57,4 @@ class _ProfilePageState extends State<ProfilePage> {
         ));
   }
 }
+*/

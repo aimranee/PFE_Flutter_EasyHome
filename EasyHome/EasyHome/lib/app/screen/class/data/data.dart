@@ -6,6 +6,7 @@ final _annonce1 = Annonce(
   description: 'daar kbira 2éme etage 3 chambre ...',
   prix: "2000.00",
   rooms: "3",
+  tele: "0612345678",
   limitPersonne: "3",
   isFav: false,
   images: [
@@ -23,6 +24,7 @@ final _annonce2 = Annonce(
   adresse: 'Elghawa, Saad Allah Hined',
   description: 'daar kbira 1ére etage 3 chambre ..',
   prix: "1900.00",
+  tele: "0612345678",
   rooms: "3",
   limitPersonne: "3",
   isFav: false,
@@ -44,6 +46,7 @@ final _annonce3 = Annonce(
   rooms: "2",
   limitPersonne: "3",
   isFav: false,
+  tele: "0612345678",
   images: [
     'assets/images/house1.jpeg',
     'assets/images/indoor1.jpeg',
@@ -61,6 +64,7 @@ final _annonce4 = Annonce(
   prix: "1000.00",
   rooms: "2",
   limitPersonne: "3",
+  tele: "0612345678",
   isFav: false,
   images: [
     'assets/images/house1.jpeg',

@@ -76,7 +76,9 @@ class DBServices {
 
   Stream<List<Annonce>> get getAnnonce {
     return annoncecol.snapshots().map((annonce) {
-      return annonce.docs.map((e) => Annonce.fromJson(e.data())).toList();
+      return annonce.docs
+          .map((e) => Annonce.fromJson(e.data(), id: e.id))
+          .toList();
     });
   }
 }

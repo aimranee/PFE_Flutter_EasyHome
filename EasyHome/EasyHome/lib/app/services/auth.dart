@@ -1,19 +1,10 @@
 import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:easyhome/app/services/db.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthServices {
   FirebaseAuth auth = FirebaseAuth.instance;
-
-  Future signinAnonimous() async {
-    try {
-      final result = await auth.signInAnonymously();
-      return result.user;
-    } catch (e) {
-      return null;
-    }
-  }
 
   Future<User> get user async {
     final user = FirebaseAuth.instance.currentUser;
@@ -51,6 +42,8 @@ class AuthServices {
 
   Future signOut() async {
     try {
+      final googleSignIn = GoogleSignIn();
+      await googleSignIn.signOut();
       return auth.signOut();
     } catch (e) {
       return null;

@@ -1,4 +1,3 @@
-import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:easyhome/app/screen/home/outils/Homes.dart';
 import 'package:easyhome/app/screen/home/outils/Menu.dart';
 import 'package:easyhome/app/screen/home/outils/Premiem.dart';
@@ -6,7 +5,6 @@ import 'package:easyhome/app/screen/home/outils/add_annonce.dart';
 import 'package:easyhome/app/screen/home/outils/add_annonce_premium.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);

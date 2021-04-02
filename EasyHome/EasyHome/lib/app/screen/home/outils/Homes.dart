@@ -1,10 +1,8 @@
 import 'package:easyhome/app/screen/class/data/data.dart';
 import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:easyhome/app/screen/detail/home_detail.dart';
-import 'package:easyhome/app/screen/home/outils/list.dart';
-import 'package:easyhome/app/services/db.dart';
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -54,8 +52,8 @@ class _HomeState extends State<Home> {
                         image: AssetImage(annonce.images[0]),
                       )),
                   Positioned(
-                    right: 20.0 / 2,
-                    top: 20.0 / 2,
+                    right: 10,
+                    top: 10,
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -93,7 +91,6 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     Container(
-                      //height: 10,
                       width: 126,
                     ),
                     Text(
