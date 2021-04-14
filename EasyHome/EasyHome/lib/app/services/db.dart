@@ -106,6 +106,24 @@ InputElement input = FileUploadInputElement()..accept = 'image/**/';
     }
   }
 
+    Future updatevehicule(Annonce annonce) async {
+    try {
+      await annoncecol.doc(annonce.id).update(annonce.toMap());
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  Future deletevehicule(String id) async {
+    try {
+      await annoncecol.doc(id).delete();
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
   Stream<List<Annonce>> get getAnnonce {
     return annoncecol.snapshots().map((annonce) {
       return annonce.docs

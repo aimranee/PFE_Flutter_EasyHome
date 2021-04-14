@@ -192,8 +192,7 @@ class _AddAnnonceState extends State<AddAnnonce> {
                           onPressed: () async {
                             if (key.currentState.validate()) {
                               loading(context);
-                              annonce.uid =
-                                  FirebaseAuth.instance.currentUser.uid;
+
                               annonce.title = titre;
                               annonce.adresse = adresse;
                               annonce.tele = tele;
@@ -202,6 +201,8 @@ class _AddAnnonceState extends State<AddAnnonce> {
                               annonce.description = description;
                               annonce.limitPersonne = nbrPersonne;
                               annonce.images = [];
+                              annonce.uid =
+                                  FirebaseAuth.instance.currentUser.uid;
                               for (int i = 0; i < images.length; i++) {
                                 String urlImage = await DBServices()
                                     .uploadImage(images[i], path: "annonce");

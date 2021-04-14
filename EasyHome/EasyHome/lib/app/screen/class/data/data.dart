@@ -6,15 +6,15 @@ final _annonce1 = Annonce(
   description: 'daar kbira 2éme etage 3 chambre ...',
   prix: "2000.00",
   rooms: "3",
-  tele: "0612345678",
+  tele: "0619784678",
   limitPersonne: "3",
   isFav: false,
   images: [
+    'assets/images/home5.jpeg',
     'assets/images/home1.jpeg',
     'assets/images/home2.jpeg',
     'assets/images/home3.jpeg',
     'assets/images/home4.jpeg',
-    'assets/images/home5.jpeg',
     'assets/images/home6.jpeg',
   ],
 );
@@ -46,7 +46,7 @@ final _annonce3 = Annonce(
   rooms: "2",
   limitPersonne: "3",
   isFav: false,
-  tele: "0612345678",
+  tele: "0600623545",
   images: [
     'assets/images/home13.jpeg',
     'assets/images/home14.jpeg',
@@ -64,7 +64,7 @@ final _annonce4 = Annonce(
   prix: "1000.00",
   rooms: "2",
   limitPersonne: "3",
-  tele: "0612345678",
+  tele: "0652513568",
   isFav: false,
   images: [
     'assets/images/home19.jpeg',

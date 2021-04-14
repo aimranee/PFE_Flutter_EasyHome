@@ -25,24 +25,24 @@ class _PagePremiumDetailsState extends State<PagePremiumDetails> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.white,
-            centerTitle: true,
-            title: RichText(
-              text: TextSpan(
-                  style: Theme.of(context)
-                      .textTheme
-                      .title
-                      .copyWith(fontWeight: FontWeight.bold),
-                  children: [
-                    TextSpan(
-                        text: "Easy", style: TextStyle(color: Colors.grey)),
-                    TextSpan(
-                        text: "Home",
-                        style: TextStyle(color: Colors.lightBlue)),
-                  ]),
-            )),
-        body: Stack(alignment: Alignment.bottomCenter, children: [
+      appBar: AppBar(
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          title: RichText(
+            text: TextSpan(
+                style: Theme.of(context)
+                    .textTheme
+                    .title
+                    .copyWith(fontWeight: FontWeight.bold),
+                children: [
+                  TextSpan(text: "Easy", style: TextStyle(color: Colors.grey)),
+                  TextSpan(
+                      text: "Home", style: TextStyle(color: Colors.lightBlue)),
+                ]),
+          )),
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
           Column(
             children: [
               Stack(
@@ -55,69 +55,39 @@ class _PagePremiumDetailsState extends State<PagePremiumDetails> {
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 25),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                    child: Container(
-                      width: size.width * 0.35,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        color: Colors.lightBlue,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            (Icons.mail_rounded),
-                            color: Colors.white,
-                          ),
-                          Text(
-                            ' Message',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                            ),
-                          )
-                        ],
+            child: Container(
+              width: size.width * 0.45,
+              height: 60,
+              child: ElevatedButton(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      (Icons.call_rounded),
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Text(
+                      'Appel',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
                       ),
                     ),
-                    onPressed: () {}),
-                    
-                ElevatedButton(
-                  child: Container(
-                    width: size.width * 0.35,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: Colors.lightBlue,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          (Icons.call_rounded),
-                          color: Colors.white,
-                        ),
-                        Text(
-                          ' Call',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  onPressed: () {
-                    _makecall('tel:${widget.annoncePremium.tele}');
-                  },
+                  ],
                 ),
-              ],
+                onPressed: () {
+                  _makecall('tel:${widget.annoncePremium.tele}');
+                },
+              ),
             ),
           ),
-        ]));
+        ],
+      ),
+    );
   }
 
   void _makecall(String number) async {
