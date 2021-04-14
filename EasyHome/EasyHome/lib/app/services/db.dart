@@ -5,6 +5,7 @@ import 'package:easyhome/app/screen/class/model/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:path/path.dart' as Path;
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 class DBServices {
   final CollectionReference usercol =
@@ -43,12 +44,43 @@ class DBServices {
     }
   }
 
+    Future updateUser(UserM user) async {
+    try {
+      await usercol.doc(user.id).update(
+      user.toMap()
+      );
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /*Future<String> uploadImage(File file, {String path}) async {
+InputElement input = FileUploadInputElement()..accept = 'image/**/';
+    FirebaseStorage fs = FirebaseStorage.instance;
+    input.click();
+    input.onChange.listen((event) {
+      final file = input.files.first;
+      final reader = FileReader();
+      reader.readAsDataUrl(file);
+      reader.onLoadEnd.listen((event) async {
+        var snapshot = await fs.ref().child('newfile').putBlob(file);
+        String downloadUrl = await snapshot.ref.getDownloadURL();
+        setState(() {
+          imgUrl = downloadUrl;
+        });
+      });
+    });
+  }*/
+
+
   Future<String> uploadImage(File file, {String path}) async {
     var time = DateTime.now().toString();
     var ext = Path.basename(file.path).split(".")[1].toString();
     String image = path + "_" + time + "." + ext;
     try {
-      Reference ref = FirebaseStorage.instance.ref(path + "/" + image);
+      firebase_storage.Reference ref =
+          firebase_storage.FirebaseStorage.instance.ref(path + "/" + image);
       ref.putFile(file);
       return await ref.getDownloadURL();
     } catch (e) {

@@ -1,10 +1,14 @@
+import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:easyhome/app/screen/home/outils/Homes.dart';
 import 'package:easyhome/app/screen/home/outils/Menu.dart';
-import 'package:easyhome/app/screen/home/outils/Premiem.dart';
+import 'package:easyhome/app/screen/home/outils/Premium.dart';
 import 'package:easyhome/app/screen/home/outils/add_annonce.dart';
 import 'package:easyhome/app/screen/home/outils/add_annonce_premium.dart';
+import 'package:easyhome/app/screen/test/annonceList.dart';
+import 'package:easyhome/app/services/db.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -45,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Column(
             children: [
-              PremiemList(),
+              PremiumList(),
               Divider(),
               Home(),
             ],
@@ -82,6 +86,21 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: () {
               Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => AddAnnoncePremium()));
+            },
+          ),
+          SpeedDialChild(
+            child: Icon(
+              Icons.list,
+              color: Colors.white,
+            ),
+            backgroundColor: Colors.amber,
+            label: 'list',
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => StreamProvider<List<Annonce>>.value(
+                        value: DBServices().getAnnonce,
+                        child: AnnonceList(),
+                      )));
             },
           ),
         ],

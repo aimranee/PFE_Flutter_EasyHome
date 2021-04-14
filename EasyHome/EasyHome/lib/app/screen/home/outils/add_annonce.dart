@@ -44,7 +44,7 @@ class _AddAnnonceState extends State<AddAnnonce> {
                       hintText: "Titre de la annonce",
                       labelText: "Titre",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -57,7 +57,7 @@ class _AddAnnonceState extends State<AddAnnonce> {
                       hintText: "Nombre des chambres",
                       labelText: "Chambres",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -71,7 +71,7 @@ class _AddAnnonceState extends State<AddAnnonce> {
                       hintText: "Prix",
                       labelText: "Prix",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -85,7 +85,7 @@ class _AddAnnonceState extends State<AddAnnonce> {
                       hintText: "nombre",
                       labelText: "nombre des personne",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -99,7 +99,7 @@ class _AddAnnonceState extends State<AddAnnonce> {
                       hintText: "Téléphone",
                       labelText: "Téléphone",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(
@@ -112,7 +112,7 @@ class _AddAnnonceState extends State<AddAnnonce> {
                       hintText: "Localisation",
                       labelText: "Localisation",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                   SizedBox(

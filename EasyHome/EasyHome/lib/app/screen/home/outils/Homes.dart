@@ -20,11 +20,6 @@ class _HomeState extends State<Home> {
           context,
           MaterialPageRoute(
             builder: (_) => PageDetails(annonce: annonce),
-            /*builder: (context) => StreamProvider<List<Annonce>>.value(
-                    initialData: [],
-                    value: DBServices().getAnnonce,
-                    child: MotoList(),
-                  )*/
           ),
         );
       },
@@ -46,10 +41,10 @@ class _HomeState extends State<Home> {
                   ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
                       child: Image(
-                        height: 120,
+                        height: 130,
                         width: size.width,
                         fit: BoxFit.cover,
-                        image: AssetImage(annonce.images[0]),
+                        image: AssetImage(annonce.images.first),
                       )),
                   Positioned(
                     right: 10,
@@ -104,7 +99,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.all(8),
+                  padding: EdgeInsets.all(4),
                   child: Row(
                     children: [
                       Icon(Icons.location_pin),

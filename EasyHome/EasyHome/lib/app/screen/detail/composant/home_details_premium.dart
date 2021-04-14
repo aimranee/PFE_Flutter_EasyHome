@@ -1,16 +1,16 @@
 import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:flutter/material.dart';
 
-class HomeDetails extends StatefulWidget {
-  final Annonce annonce;
+class HomeDetailsPremium extends StatefulWidget {
+  final Annonce annoncePremium;
 
-  HomeDetails(this.annonce);
+  HomeDetailsPremium(this.annoncePremium);
 
   @override
-  _HomeDetailsState createState() => _HomeDetailsState();
+  _HomeDetailsPremiumState createState() => _HomeDetailsPremiumState();
 }
 
-class _HomeDetailsState extends State<HomeDetails> {
+class _HomeDetailsPremiumState extends State<HomeDetailsPremium> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -34,7 +34,7 @@ class _HomeDetailsState extends State<HomeDetails> {
                     ),
                   ),
                   subtitle: Text(
-                    "${widget.annonce.prix} DH",
+                    "${widget.annoncePremium.prix} DH",
                     style: TextStyle(fontSize: 18),
                   ),
                   leading: Icon(Icons.attach_money),
@@ -48,7 +48,7 @@ class _HomeDetailsState extends State<HomeDetails> {
                     ),
                   ),
                   subtitle: Text(
-                    "${widget.annonce.adresse}",
+                    "${widget.annoncePremium.adresse}",
                     style: TextStyle(fontSize: 18),
                   ),
                   leading: Icon(Icons.location_searching),
@@ -62,7 +62,7 @@ class _HomeDetailsState extends State<HomeDetails> {
                     ),
                   ),
                   subtitle: Text(
-                    "${widget.annonce.limitPersonne}",
+                    "${widget.annoncePremium.limitPersonne}",
                     style: TextStyle(fontSize: 18),
                   ),
                   leading: Icon(Icons.people),
@@ -76,7 +76,7 @@ class _HomeDetailsState extends State<HomeDetails> {
                     ),
                   ),
                   subtitle: Text(
-                    "${widget.annonce.rooms}",
+                    "${widget.annoncePremium.rooms}",
                     style: TextStyle(fontSize: 18),
                   ),
                   leading: Icon(Icons.home_filled),
@@ -90,7 +90,7 @@ class _HomeDetailsState extends State<HomeDetails> {
                     ),
                   ),
                   subtitle: Text(
-                    "${widget.annonce.tele}",
+                    "${widget.annoncePremium.tele}",
                     style: TextStyle(fontSize: 18),
                   ),
                   leading: Icon(Icons.call),

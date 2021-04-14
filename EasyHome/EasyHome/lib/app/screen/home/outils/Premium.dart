@@ -1,12 +1,12 @@
 import 'package:easyhome/app/screen/class/data/dataPremiem.dart';
 import 'package:easyhome/app/screen/class/model/annonce.dart';
-import 'package:easyhome/app/screen/detail/home_detail_premiem.dart';
+import 'package:easyhome/app/screen/detail/home_detail_premium.dart';
 import 'package:flutter/material.dart';
 
-class PremiemList extends StatelessWidget {
+class PremiumList extends StatelessWidget {
   _buildStyles(BuildContext context, int index) {
     Size size = MediaQuery.of(context).size;
-    Annonce annoncePremiem = listPremiem[index];
+    Annonce annoncePremium = listPremium[index];
 
     return GestureDetector(
         onTap: () {
@@ -14,7 +14,7 @@ class PremiemList extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (_) =>
-                  PagePremiemDetails(annoncePremiem: annoncePremiem),
+                  PagePremiumDetails(annoncePremium: annoncePremium),
             ),
           );
         },
@@ -31,7 +31,7 @@ class PremiemList extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image(
                     fit: BoxFit.cover,
-                    image: AssetImage(annoncePremiem.images[0]),
+                    image: AssetImage(annoncePremium.images.first),
                   ),
                 ),
               ),
@@ -49,7 +49,7 @@ class PremiemList extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              'Premiem',
+              'Premium Annonce',
               style: TextStyle(fontSize: 20),
             ),
             Padding(
@@ -59,7 +59,7 @@ class PremiemList extends StatelessWidget {
                 child: ListView.builder(
                     physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    itemCount: listPremiem.length,
+                    itemCount: listPremium.length,
                     itemBuilder: (BuildContext context, int index) {
                       return _buildStyles(context, index);
                     }),

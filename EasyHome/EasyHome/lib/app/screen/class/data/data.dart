@@ -10,12 +10,12 @@ final _annonce1 = Annonce(
   limitPersonne: "3",
   isFav: false,
   images: [
-    'assets/images/house1.jpeg',
-    'assets/images/indoor1.jpeg',
-    'assets/images/indoor2.jpeg',
-    'assets/images/indoor3.jpeg',
-    'assets/images/indoor4.jpeg',
-    'assets/images/indoor5.jpeg',
+    'assets/images/home1.jpeg',
+    'assets/images/home2.jpeg',
+    'assets/images/home3.jpeg',
+    'assets/images/home4.jpeg',
+    'assets/images/home5.jpeg',
+    'assets/images/home6.jpeg',
   ],
 );
 
@@ -29,12 +29,12 @@ final _annonce2 = Annonce(
   limitPersonne: "3",
   isFav: false,
   images: [
-    'assets/images/house2.jpeg',
-    'assets/images/indoor1.jpeg',
-    'assets/images/indoor2.jpeg',
-    'assets/images/indoor3.jpeg',
-    'assets/images/indoor4.jpeg',
-    'assets/images/indoor5.jpeg',
+    'assets/images/home7.jpeg',
+    'assets/images/home8.jpeg',
+    'assets/images/home9.jpeg',
+    'assets/images/home10.jpeg',
+    'assets/images/home11.jpeg',
+    'assets/images/home12.jpeg',
   ],
 );
 
@@ -48,12 +48,12 @@ final _annonce3 = Annonce(
   isFav: false,
   tele: "0612345678",
   images: [
-    'assets/images/house1.jpeg',
-    'assets/images/indoor1.jpeg',
-    'assets/images/indoor2.jpeg',
-    'assets/images/indoor3.jpeg',
-    'assets/images/indoor4.jpeg',
-    'assets/images/indoor5.jpeg',
+    'assets/images/home13.jpeg',
+    'assets/images/home14.jpeg',
+    'assets/images/home15.jpeg',
+    'assets/images/home16.jpeg',
+    'assets/images/home17.jpeg',
+    'assets/images/home18.jpeg',
   ],
 );
 
@@ -67,12 +67,12 @@ final _annonce4 = Annonce(
   tele: "0612345678",
   isFav: false,
   images: [
-    'assets/images/house1.jpeg',
-    'assets/images/indoor1.jpeg',
-    'assets/images/indoor2.jpeg',
-    'assets/images/indoor3.jpeg',
-    'assets/images/indoor4.jpeg',
-    'assets/images/indoor5.jpeg',
+    'assets/images/home19.jpeg',
+    'assets/images/home5.jpeg',
+    'assets/images/home14.jpeg',
+    'assets/images/home10.jpeg',
+    'assets/images/home16.jpeg',
+    'assets/images/home7.jpeg',
   ],
 );
 

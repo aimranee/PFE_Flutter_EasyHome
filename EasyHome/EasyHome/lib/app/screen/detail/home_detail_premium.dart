@@ -1,34 +1,29 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easyhome/app/screen/class/model/annonce.dart';
 import 'package:easyhome/app/screen/detail/composant/carousel_images.dart';
-import 'package:easyhome/app/screen/detail/composant/home_details.dart';
-import 'package:easyhome/app/services/db.dart';
+import 'package:easyhome/app/screen/detail/composant/home_details_premium.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class PageDetails extends StatefulWidget {
-  final Annonce annonce;
-  const PageDetails({Key key, this.annonce}) : super(key: key);
+class PagePremiumDetails extends StatefulWidget {
+  final Annonce annoncePremium;
+  const PagePremiumDetails({Key key, this.annoncePremium}) : super(key: key);
 
   @override
-  _PageDetailsState createState() => _PageDetailsState();
+  _PagePremiumDetailsState createState() => _PagePremiumDetailsState();
 }
 
-class _PageDetailsState extends State<PageDetails> {
-  List imgs = [];
-
-  get getCarouselImage async {
-    final images = await DBServices().getCarouselImage;
-    setState(() {
-      imgs = images;
-    });
+class _PagePremiumDetailsState extends State<PagePremiumDetails> {
+  int value = 0;
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    getCarouselImage;
     return Scaffold(
         appBar: AppBar(
             backgroundColor: Colors.white,
@@ -50,78 +45,12 @@ class _PageDetailsState extends State<PageDetails> {
         body: Stack(alignment: Alignment.bottomCenter, children: [
           Column(
             children: [
-              CarouselImages(widget.annonce.images),
-              Card(
-                child: Container(
-                  padding: EdgeInsets.all(10),
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Column(
-                          children: [
-                            Text(
-                              "Commentaires",
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                            Icon(
-                              Icons.comment,
-                              color: Colors.grey,
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(color: Colors.grey),
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 75,
-                      ),
-                      Container(
-                        child: Column(
-                          children: [
-                            Text(
-                              "Likes",
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                            Icon(
-                              Icons.arrow_circle_up,
-                              color: Colors.lightBlue,
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(color: Colors.grey),
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 75,
-                      ),
-                      Container(
-                        child: Column(
-                          children: [
-                            Text(
-                              "Dislikes",
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                            Icon(
-                              Icons.arrow_circle_down_outlined,
-                              color: Colors.red,
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(color: Colors.grey),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              Stack(
+                children: [
+                  CarouselImages(widget.annoncePremium.images),
+                ],
               ),
-              Divider(),
-              HomeDetails(widget.annonce),
+              HomeDetailsPremium(widget.annoncePremium),
             ],
           ),
           Padding(
@@ -155,6 +84,7 @@ class _PageDetailsState extends State<PageDetails> {
                       ),
                     ),
                     onPressed: () {}),
+                    
                 ElevatedButton(
                   child: Container(
                     width: size.width * 0.35,
@@ -181,12 +111,12 @@ class _PageDetailsState extends State<PageDetails> {
                     ),
                   ),
                   onPressed: () {
-                    _makecall('tel:${widget.annonce.tele}');
+                    _makecall('tel:${widget.annoncePremium.tele}');
                   },
                 ),
               ],
             ),
-          )
+          ),
         ]));
   }
 
