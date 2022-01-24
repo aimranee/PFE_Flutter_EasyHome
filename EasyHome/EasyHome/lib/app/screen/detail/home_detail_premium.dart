@@ -32,7 +32,7 @@ class _PagePremiumDetailsState extends State<PagePremiumDetails> {
             text: TextSpan(
                 style: Theme.of(context)
                     .textTheme
-                    .title
+                    .headline6
                     .copyWith(fontWeight: FontWeight.bold),
                 children: [
                   TextSpan(text: "Easy", style: TextStyle(color: Colors.grey)),

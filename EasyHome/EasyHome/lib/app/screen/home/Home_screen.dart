@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           text: TextSpan(
               style: Theme.of(context)
                   .textTheme
-                  .title
+                  .headline6
                   .copyWith(fontWeight: FontWeight.bold),
               children: [
                 TextSpan(text: "Easy", style: TextStyle(color: Colors.grey)),

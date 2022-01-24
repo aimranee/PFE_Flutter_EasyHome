@@ -37,7 +37,7 @@ class _PageDetailsState extends State<PageDetails> {
               text: TextSpan(
                   style: Theme.of(context)
                       .textTheme
-                      .title
+                      .headline6
                       .copyWith(fontWeight: FontWeight.bold),
                   children: [
                     TextSpan(
